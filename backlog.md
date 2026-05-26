@@ -92,11 +92,11 @@ _Mise en place de l'environnement de développement pour démarrer sur des bases
     - [x] Fichier CSS global configuré avec les variables (couleurs HSL, fonts, espacements).
     - [x] Reset CSS moderne (type Josh Comeau ou Andy Bell) appliqué.
 
-- [ ] **[TECH-04] Configuration du routage et de la navigation**
+- [x] **[TECH-04] Configuration du routage et de la navigation**
   - **Description** : Structurer la navigation de l'application (multi-pages physiques ou single-page fluide avec ancres URL).
   - **Critères d'acceptation** :
-    - [ ] Système de routage en place et fonctionnel sans erreur de redirection.
-    - [ ] Gestion du scroll fluide (smooth scrolling) activée par défaut.
+    - [x] Système de routage en place et fonctionnel sans erreur de redirection.
+    - [x] Gestion du scroll fluide (smooth scrolling) activée par défaut.
 
 - [ ] **[TECH-05] Intégration d'une bibliothèque d'icônes**
   - **Description** : Configurer une librairie d'icônes vectorielles légères et modernes.
