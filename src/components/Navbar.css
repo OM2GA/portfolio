@@ -32,7 +32,6 @@
   box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
-
 .navbar-container {
   width: 100%;
   max-width: 1200px;
@@ -224,17 +223,21 @@
   inset: 0;
   z-index: 1001;
   background-color: rgba(3, 7, 18, 0.6);
-  backdrop-filter: blur(4px);
-  animation: fade-in 0.25s ease-out;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  transition:
+    opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.drawer-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 
 .drawer-menu {

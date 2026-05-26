@@ -133,17 +133,17 @@ _Développement des composants de base réutilisables qui structureront l'ensemb
     - [x] Effet de flou d'arrière-plan en mode "glassmorphism" (`backdrop-filter: blur()`).
     - [x] Liens internes actifs se mettant en surbrillance selon la section actuellement visible (Intersection Observer API).
 
-- [ ] **[CORE-04] Menu Mobile (Responsive Menu)**
+- [x] **[CORE-04] Menu Mobile (Responsive Menu)**
   - **Description** : Adapter la barre de navigation pour les smartphones avec une interface adaptée aux pouces.
   - **Critères d'acceptation** :
-    - [ ] Menu tiroir (drawer/slide-in) s'ouvrant de manière fluide au clic sur l'icône burger.
-    - [ ] Fermeture automatique du menu lors d'un clic en dehors ou sur un lien de navigation.
+    - [x] Menu tiroir (drawer/slide-in) s'ouvrant de manière fluide au clic sur l'icône burger.
+    - [x] Fermeture automatique du menu lors d'un clic en dehors ou sur un lien de navigation.
 
-- [ ] **[CORE-05] Composant Pied de page (Footer)**
+- [x] **[CORE-05] Composant Pied de page (Footer)**
   - **Description** : Structurer le bas de page pour laisser une impression professionnelle durable.
   - **Critères d'acceptation** :
-    - [ ] Liens rapides vers les profils professionnels (GitHub, LinkedIn, Email).
-    - [ ] Mention du copyright avec année dynamique.
+    - [x] Liens rapides vers les profils professionnels (GitHub, LinkedIn, Email).
+    - [x] Mention du copyright avec année dynamique.
 
 - [ ] **[CORE-06] Composant Badges Technologiques (TechBadge)**
   - **Description** : Composant affichant les technologies utilisées sous forme de pastilles ou de badges avec couleurs/icônes personnalisées.

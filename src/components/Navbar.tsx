@@ -108,6 +108,21 @@ export default function Navbar() {
     };
   }, [isMenuOpen]);
 
+  // Close mobile drawer on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false);
+      }
+    };
+    if (isMenuOpen) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isMenuOpen]);
+
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
@@ -177,7 +192,10 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Drawer Overlay */}
-      {isMenuOpen && <div className="drawer-overlay" onClick={() => setIsMenuOpen(false)} />}
+      <div
+        className={`drawer-overlay ${isMenuOpen ? 'open' : ''}`}
+        onClick={() => setIsMenuOpen(false)}
+      />
 
       {/* Mobile Drawer Menu */}
       <div className={`drawer-menu ${isMenuOpen ? 'open' : ''}`} aria-hidden={!isMenuOpen}>
