@@ -9,6 +9,7 @@ Ce document remplace les croquis papier ou les wireframes Figma physiques par un
 Le site est conçu comme une application web d'une seule page fluide (Single-Page App) avec un scroll vertical fluide, complétée par une modale dynamique pour les détails de chaque projet.
 
 ### Structure Sémantique HTML5 (DOM)
+
 ```text
 +-----------------------------------------------------------+
 | <html> & <body> (Contrôle du thème .dark / .light)         |
@@ -45,8 +46,9 @@ La navigation doit s'adapter pour garantir une accessibilité optimale sur écra
 ### 2.1 En-tête : Barre de Navigation (`<header>`)
 
 #### Vue Mobile (Écran < 768px)
-*   **Comportement** : Barre compacte collée en haut (`position: fixed`). Le menu s'ouvre sous forme de tiroir latéral plein écran (Drawer) au clic sur l'icône "Burger".
-*   **Zone tactile** : Les boutons font au minimum `48px x 48px` pour éviter les erreurs de clic.
+
+- **Comportement** : Barre compacte collée en haut (`position: fixed`). Le menu s'ouvre sous forme de tiroir latéral plein écran (Drawer) au clic sur l'icône "Burger".
+- **Zone tactile** : Les boutons font au minimum `48px x 48px` pour éviter les erreurs de clic.
 
 ```text
 +---------------------------------------------------+
@@ -66,7 +68,8 @@ La navigation doit s'adapter pour garantir une accessibilité optimale sur écra
 ```
 
 #### Vue Desktop (Écran >= 768px)
-*   **Comportement** : Alignement horizontal sur une seule ligne. Intègre l'effet **Liquid Glass** (Glassmorphism, flou d'arrière-plan et bordure fine translucide) avec détection active de la section au scroll (Intersection Observer).
+
+- **Comportement** : Alignement horizontal sur une seule ligne. Intègre l'effet **Liquid Glass** (Glassmorphism, flou d'arrière-plan et bordure fine translucide) avec détection active de la section au scroll (Intersection Observer).
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -102,11 +105,13 @@ Vue Mobile (Centré verticalement)          Vue Desktop (Réparti sur les côté
 ---
 
 ### 3.1 SECTION : Hero / Accueil (`#hero`)
+
 C'est la première impression de l'utilisateur. Elle applique l'argumentaire ciblé (alternance BUT3).
 
 #### 📱 Layout Mobile (Mobile-First)
-*   **Structure** : Simple colonne centrée verticalement.
-*   **Hiérarchie** : Badge d'état -> Titre H1 -> Slogan de ciblage -> Boutons d'actions empilés.
+
+- **Structure** : Simple colonne centrée verticalement.
+- **Hiérarchie** : Badge d'état -> Titre H1 -> Slogan de ciblage -> Boutons d'actions empilés.
 
 ```text
 +---------------------------------------------------+
@@ -132,10 +137,11 @@ C'est la première impression de l'utilisateur. Elle applique l'argumentaire cib
 ```
 
 #### 💻 Layout Desktop (Écran >= 1024px)
-*   **Structure** : Grille à deux colonnes (`grid-template-columns: 3fr 2fr`).
-*   **Contenu** :
-    *   **Colonne Gauche** : Titre H1, sous-titre de ciblage stratégique, texte interactif d'auto-typing (caps), et boutons d'action côte à côte.
-    *   **Colonne Droite** : Une illustration SVG interactive ou une pièce de "Creative Coding" représentant l'interactivité ou un concept IoT en temps réel.
+
+- **Structure** : Grille à deux colonnes (`grid-template-columns: 3fr 2fr`).
+- **Contenu** :
+  - **Colonne Gauche** : Titre H1, sous-titre de ciblage stratégique, texte interactif d'auto-typing (caps), et boutons d'action côte à côte.
+  - **Colonne Droite** : Une illustration SVG interactive ou une pièce de "Creative Coding" représentant l'interactivité ou un concept IoT en temps réel.
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -160,10 +166,12 @@ C'est la première impression de l'utilisateur. Elle applique l'argumentaire cib
 ---
 
 ### 3.2 SECTION : À Propos & Frise Chronologique (`#about`)
+
 Présente le profil de Maxence, sa polyvalence, et son parcours BUT MMI via une timeline interactive.
 
 #### 📱 Layout Mobile
-*   **Structure** : Flux vertical standard. La timeline est une ligne verticale sur le bord gauche, avec les événements empilés les uns en dessous des autres.
+
+- **Structure** : Flux vertical standard. La timeline est une ligne verticale sur le bord gauche, avec les événements empilés les uns en dessous des autres.
 
 ```text
 +---------------------------------------------------+
@@ -189,7 +197,8 @@ Présente le profil de Maxence, sa polyvalence, et son parcours BUT MMI via une 
 ```
 
 #### 💻 Layout Desktop (Écran >= 1024px)
-*   **Structure** : Grille à deux colonnes (`1fr 1fr`) pour la bio, puis frise horizontale interactive couvrant toute la largeur pour le parcours.
+
+- **Structure** : Grille à deux colonnes (`1fr 1fr`) pour la bio, puis frise horizontale interactive couvrant toute la largeur pour le parcours.
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -221,10 +230,12 @@ Présente le profil de Maxence, sa polyvalence, et son parcours BUT MMI via une 
 ---
 
 ### 3.3 SECTION : Projets (`#projects`) - Grille Bento Premium
+
 Affiche les projets sous forme de **Bento Grid** interactive avec un système de filtres temps réel (sans rechargement de page).
 
 #### 📱 Layout Mobile
-*   **Structure** : Filtres disposés dans un menu de défilement horizontal (swipeable). Les cartes de projets sont empilées sur une seule colonne à 100% de largeur pour s'adapter à l'écran tactile.
+
+- **Structure** : Filtres disposés dans un menu de défilement horizontal (swipeable). Les cartes de projets sont empilées sur une seule colonne à 100% de largeur pour s'adapter à l'écran tactile.
 
 ```text
 +---------------------------------------------------+
@@ -250,8 +261,9 @@ Affiche les projets sous forme de **Bento Grid** interactive avec un système de
 ```
 
 #### 💻 Layout Desktop (Écran >= 1024px)
-*   **Structure** : **Bento Grid** asymétrique (`grid-template-columns: repeat(3, 1fr)`). 
-*   **Agencement** : Le projet majeur (ex: SAÉ de groupe ou Projet IoT clé) s'étend sur deux colonnes (`grid-column: span 2`), tandis que les projets secondaires occupent une seule colonne. L'effet au survol applique un zoom de l'image et une bordure lumineuse (Glow effect).
+
+- **Structure** : **Bento Grid** asymétrique (`grid-template-columns: repeat(3, 1fr)`).
+- **Agencement** : Le projet majeur (ex: SAÉ de groupe ou Projet IoT clé) s'étend sur deux colonnes (`grid-column: span 2`), tandis que les projets secondaires occupent une seule colonne. L'effet au survol applique un zoom de l'image et une bordure lumineuse (Glow effect).
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -285,10 +297,12 @@ Affiche les projets sous forme de **Bento Grid** interactive avec un système de
 ---
 
 ### 3.4 SECTION : Compétences / Skills (`#skills`)
+
 Présente la stack technique et méthodologique de manière organisée.
 
 #### 📱 Layout Mobile
-*   **Structure** : Sections pliables (Accordéon) ou empilées verticalement pour éviter de surcharger l'écran.
+
+- **Structure** : Sections pliables (Accordéon) ou empilées verticalement pour éviter de surcharger l'écran.
 
 ```text
 +---------------------------------------------------+
@@ -306,8 +320,9 @@ Présente la stack technique et méthodologique de manière organisée.
 ```
 
 #### 💻 Layout Desktop (Écran >= 1024px)
-*   **Structure** : Bento Grid à 4 blocs distincts (`grid-template-columns: repeat(2, 1fr)` ou `repeat(4, 1fr)`).
-*   **Contenu** : Chaque catégorie est une carte avec un fond en **Glassmorphism**, des icônes colorées et des tags technologiques (Fira Code) qui s'illuminent au survol.
+
+- **Structure** : Bento Grid à 4 blocs distincts (`grid-template-columns: repeat(2, 1fr)` ou `repeat(4, 1fr)`).
+- **Contenu** : Chaque catégorie est une carte avec un fond en **Glassmorphism**, des icônes colorées et des tags technologiques (Fira Code) qui s'illuminent au survol.
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -330,10 +345,12 @@ Présente la stack technique et méthodologique de manière organisée.
 ---
 
 ### 3.5 SECTION : Contact (`#contact`)
+
 Permet la conversion (envoi de message) via un formulaire sécurisé et esthétique.
 
 #### 📱 Layout Mobile
-*   **Structure** : Formulaire vertical à colonne unique. Les champs sont larges et faciles à presser.
+
+- **Structure** : Formulaire vertical à colonne unique. Les champs sont larges et faciles à presser.
 
 ```text
 +---------------------------------------------------+
@@ -364,9 +381,10 @@ Permet la conversion (envoi de message) via un formulaire sécurisé et esthéti
 ```
 
 #### 💻 Layout Desktop (Écran >= 1024px)
-*   **Structure** : Grille à deux colonnes (`2fr 3fr`).
-*   **Colonne Gauche** : Informations de contact directes (Email, téléphone, zone géographique, disponibilité, réseaux sociaux) pour une lecture rapide par le recruteur RH.
-*   **Colonne Droite** : Formulaire de contact moderne interactif avec validation à la volée.
+
+- **Structure** : Grille à deux colonnes (`2fr 3fr`).
+- **Colonne Gauche** : Informations de contact directes (Email, téléphone, zone géographique, disponibilité, réseaux sociaux) pour une lecture rapide par le recruteur RH.
+- **Colonne Droite** : Formulaire de contact moderne interactif avec validation à la volée.
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -398,8 +416,9 @@ Permet la conversion (envoi de message) via un formulaire sécurisé et esthéti
 Lorsqu'un visiteur clique sur "Voir Détails" sur n'importe quel projet, cette modale en plein écran ou grand panneau s'ouvre de manière fluide. Elle est critique pour la **Cible 2 (Lead Dev)** car elle explique en détail l'architecture technique, le rôle de Maxence et les problématiques résolues.
 
 #### Layout Unifié (Optimisé Desktop avec repli fluide sur Mobile)
-*   **Structure HTML** : Utilisation de la balise HTML5 sémantique `<dialog>` pour une gestion native de l'accessibilité au clavier (Focus-trap, touche `ESC` pour fermer).
-*   **Agencement Desktop** : Double colonne (`1fr 1fr`) pour la galerie d'images et l'explication.
+
+- **Structure HTML** : Utilisation de la balise HTML5 sémantique `<dialog>` pour une gestion native de l'accessibilité au clavier (Focus-trap, touche `ESC` pour fermer).
+- **Agencement Desktop** : Double colonne (`1fr 1fr`) pour la galerie d'images et l'explication.
 
 ```text
 +-----------------------------------------------------------------------------------------+
@@ -428,7 +447,7 @@ Lorsqu'un visiteur clique sur "Voir Détails" sur n'importe quel projet, cette m
 +-----------------------------------------------------------------------------------------+
 ```
 
-*Note : Sur version Mobile, les colonnes gauche et droite s'empilent verticalement de manière classique pour préserver la lisibilité de la police de lecture.*
+_Note : Sur version Mobile, les colonnes gauche et droite s'empilent verticalement de manière classique pour préserver la lisibilité de la police de lecture._
 
 ---
 
@@ -437,16 +456,18 @@ Lorsqu'un visiteur clique sur "Voir Détails" sur n'importe quel projet, cette m
 Afin de garantir un rendu premium conforme aux meilleures pratiques de design interactif, les comportements suivants sont spécifiés au niveau du CSS :
 
 ### 5.1 Hover Effects (Survol de souris)
-*   **Bento Cards** : Légère translation verticale de `-4px` et halo lumineux (`box-shadow` ou `--glow-color`) de couleur d'accent (Indigo ou Menthe).
-*   **Boutons (CTAs)** : Transition fluide du fond de 0.2s (`transition: background-color 0.2s ease-in-out`).
-*   **Images Projets** : Léger zoom d'image (`transform: scale(1.05)`) contenu à l'intérieur de la carte (`overflow: hidden`).
+
+- **Bento Cards** : Légère translation verticale de `-4px` et halo lumineux (`box-shadow` ou `--glow-color`) de couleur d'accent (Indigo ou Menthe).
+- **Boutons (CTAs)** : Transition fluide du fond de 0.2s (`transition: background-color 0.2s ease-in-out`).
+- **Images Projets** : Léger zoom d'image (`transform: scale(1.05)`) contenu à l'intérieur de la carte (`overflow: hidden`).
 
 ### 5.2 Accessibilité & Focus Clavier (`:focus-visible`)
-*   Tout élément cliquable navigué à la touche `TAB` doit afficher un contour net :
-    ```css
-    *:focus-visible {
-      outline: 3px solid var(--accent-primary);
-      outline-offset: 4px;
-    }
-    ```
-*   **Skip-Links** : Ajout d'un lien d'évitement caché "Aller au contenu principal" visible uniquement au focus clavier pour les personnes naviguant avec un lecteur d'écran.
+
+- Tout élément cliquable navigué à la touche `TAB` doit afficher un contour net :
+  ```css
+  *:focus-visible {
+    outline: 3px solid var(--accent-primary);
+    outline-offset: 4px;
+  }
+  ```
+- **Skip-Links** : Ajout d'un lien d'évitement caché "Aller au contenu principal" visible uniquement au focus clavier pour les personnes naviguant avec un lecteur d'écran.
