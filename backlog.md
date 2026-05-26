@@ -14,12 +14,12 @@ Ce fichier regroupe **50 tickets détaillés** pour concevoir, développer, opti
 ## 🗺️ Sommaire des Phases
 
 - [🎨 Phase 1 : Conception & Design (UI/UX)](#-phase-1--conception--design-uiux) (7 tickets)
-- [🛠️ Phase 2 : Configuration Technique & Architecture](#%EF%B8%8F-phase-2--configuration-technique--architecture) (7 tickets)
+- [🛠️ Phase 2 : Configuration Technique & Architecture](#%EF%B8%8F-phase-2--configuration-technique--architecture) (6 tickets)
 - [🧱 Phase 3 : Intégration du Design System & Composants Core](#-phase-3--intégration-du-design-system--composants-core) (8 tickets)
 - [🖥️ Phase 4 : Développement des Sections Principales](#%EF%B8%8F-phase-4--développement-des-sections-principales) (9 tickets)
 - [⚡ Phase 5 : Fonctionnalités Avancées & Interactivité](#-phase-5--fonctionnalités-avancées--interactivité) (8 tickets)
 - [📈 Phase 6 : Optimisation, SEO & Accessibilité (A11y)](#-phase-6--optimisation-seo--accessibilité-a11y) (6 tickets)
-- [🚀 Phase 7 : Tests, Finitions & Déploiement](#-phase-7--tests-finitions--déploiement) (5 tickets)
+- [🚀 Phase 7 : Tests, Finitions & Déploiement](#-phase-7--tests-finitions--déploiement) (6 tickets)
 
 ---
 
@@ -108,23 +108,17 @@ _Mise en place de l'environnement de développement pour démarrer sur des bases
   - **Critères d'acceptation** :
     - [x] Fichier de données de test en place contenant les détails d'au moins 3 projets.
 
-- [ ] **[TECH-07] Setup du déploiement continu (CI/CD) de test**
-  - **Description** : Connecter ton dépôt GitHub à ton service d'hébergement (Vercel ou Netlify) pour valider que le processus de build fonctionne dès le début du développement.
-  - **Critères d'acceptation** :
-    - [ ] Projet déployé sur une URL temporaire.
-    - [ ] Déploiement automatique déclenché à chaque `push` sur la branche principale.
-
 ---
 
 ## 🧱 Phase 3 : Intégration du Design System & Composants Core
 
 _Développement des composants de base réutilisables qui structureront l'ensemble des pages._
 
-- [ ] **[CORE-01] Composant Bouton réutilisable (Button)**
+- [x] **[CORE-01] Composant Bouton réutilisable (Button)**
   - **Description** : Créer un composant bouton hautement paramétrable supportant plusieurs styles (primaire, secondaire, outline, désactivé).
   - **Critères d'acceptation** :
-    - [ ] Props du composant définies proprement (icones optionnelles, tailles, variantes).
-    - [ ] Micro-interactions au survol (hover) fluides avec transitions CSS.
+    - [x] Props du composant définies proprement (icones optionnelles, tailles, variantes).
+    - [x] Micro-interactions au survol (hover) fluides avec transitions CSS.
 
 - [ ] **[CORE-02] Composant Carte de Projet (ProjectCard)**
   - **Description** : Créer la carte interactive affichant un projet de manière synthétique avant d'accéder aux détails.
@@ -353,3 +347,11 @@ _La dernière ligne droite pour garantir un lancement professionnel sans aucun b
   - **Critères d'acceptation** :
     - [ ] Outil configuré (ex: _Plausible_, _Umami_ ou _Google Analytics sans cookies tiers_).
     - [ ] Dashboard de statistiques accessible et fonctionnel.
+
+- [ ] **[DEPLOY-03] Déploiement final de production via FileZilla**
+  - **Description** : Lancer la mise en ligne finale et officielle de ton portfolio en construisant le projet localement et en le transférant via FileZilla (FTP/SFTP) sur ton serveur d'hébergement.
+  - **Critères d'acceptation** :
+    - [ ] Générer le build de production propre (`npm run build`) localement sans avertissement majeur.
+    - [ ] Connecter ton serveur via FileZilla avec les accès de production définitifs.
+    - [ ] Transférer l'ensemble des fichiers compilés du dossier `dist/` vers la racine de ton hébergement.
+    - [ ] Confirmer que le site est entièrement en ligne, réactif et que toutes les pages et ressources (images, CSS, JS) se chargent correctement.

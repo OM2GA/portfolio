@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Button from './components/Button';
 import './App.css';
 
 function App() {
@@ -25,12 +26,12 @@ function App() {
                   accessibles, et je développe des dispositifs connectés innovants (IoT).
                 </p>
                 <div className="hero-actions">
-                  <a href="#projects" className="btn btn-primary">
+                  <Button href="#projects" variant="glow" size="lg">
                     Voir les Projets
-                  </a>
-                  <a href="#contact" className="btn btn-secondary">
+                  </Button>
+                  <Button href="#contact" variant="secondary" size="lg">
                     Me Contacter
-                  </a>
+                  </Button>
                 </div>
               </div>
               <div className="hero-visual-col">
@@ -230,9 +231,9 @@ function App() {
                     <label htmlFor="message">Message</label>
                     <textarea id="message" rows={4} placeholder="Votre message..." disabled />
                   </div>
-                  <button type="submit" className="btn btn-primary" disabled>
+                  <Button type="submit" variant="primary" disabled>
                     Envoyer (Prochainement disponible)
-                  </button>
+                  </Button>
                 </form>
               </div>
             </div>
