@@ -127,11 +127,11 @@ _Développement des composants de base réutilisables qui structureront l'ensemb
     - [x] Présence d'un lien vers la démo en ligne et/ou le dépôt GitHub.
     - [x] Effet au survol élégant (ex: zoom léger de l'image, surbrillance de la bordure).
 
-- [ ] **[CORE-03] Composant En-tête / Navigation (Navbar)**
+- [x] **[CORE-03] Composant En-tête / Navigation (Navbar)**
   - **Description** : Créer la barre de navigation principale qui reste accessible lors du défilement.
   - **Critères d'acceptation** :
-    - [ ] Effet de flou d'arrière-plan en mode "glassmorphism" (`backdrop-filter: blur()`).
-    - [ ] Liens internes actifs se mettant en surbrillance selon la section actuellement visible (Intersection Observer API).
+    - [x] Effet de flou d'arrière-plan en mode "glassmorphism" (`backdrop-filter: blur()`).
+    - [x] Liens internes actifs se mettant en surbrillance selon la section actuellement visible (Intersection Observer API).
 
 - [ ] **[CORE-04] Menu Mobile (Responsive Menu)**
   - **Description** : Adapter la barre de navigation pour les smartphones avec une interface adaptée aux pouces.

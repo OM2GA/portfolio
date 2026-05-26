@@ -39,6 +39,7 @@ const navItems: NavItem[] = [
 export default function Navbar() {
   const [activeSection, setActiveSection] = useState('hero');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
     const saved = localStorage.getItem('theme');
     if (saved === 'dark' || saved === 'light') return saved;
@@ -51,6 +52,23 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Scroll handler for navbar contraction
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    // Trigger on mount in case the page is loaded scrolled
+    handleScroll();
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Section Observer effect for active navigation
   useEffect(() => {
@@ -106,7 +124,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="navbar-header">
+    <header className={`navbar-header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <a href="#hero" className="navbar-logo" onClick={(e) => handleNavClick(e, 'hero')}>
           <span>MC</span>
