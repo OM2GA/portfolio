@@ -1,6 +1,7 @@
 import { ExternalLink, Code, Users } from 'lucide-react';
 import type { Project } from '../types/project';
 import Button from './Button';
+import TechBadge from './TechBadge';
 import './ProjectCard.css';
 
 const GithubIcon = ({ size = 16, className = '' }: { size?: number; className?: string }) => (
@@ -97,9 +98,7 @@ export default function ProjectCard({ project, className = '' }: ProjectCardProp
         {/* Stack Tags */}
         <div className="project-card-tags">
           {stack.slice(0, 4).map((tech) => (
-            <span key={tech} className="project-tech-tag">
-              {tech}
-            </span>
+            <TechBadge key={tech} tech={tech} size="sm" />
           ))}
           {stack.length > 4 && (
             <span className="project-tech-tag-more" title={stack.slice(4).join(', ')}>

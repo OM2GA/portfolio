@@ -2,6 +2,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Button from './components/Button';
 import ProjectCard from './components/ProjectCard';
+import TechBadge from './components/TechBadge';
+import ScrollToTop from './components/ScrollToTop';
 import { projects } from './data/projects';
 import './App.css';
 
@@ -139,37 +141,46 @@ function App() {
               <div className="skills-card-mock">
                 <h3>Développement Front</h3>
                 <div className="skill-tags">
-                  <code>HTML5 / CSS3</code>
-                  <code>JavaScript (ES6+)</code>
-                  <code>TypeScript</code>
-                  <code>React / Next.js</code>
+                  <TechBadge tech="HTML5" size="md" />
+                  <TechBadge tech="CSS3" size="md" />
+                  <TechBadge tech="JavaScript" size="md" />
+                  <TechBadge tech="TypeScript" size="md" />
+                  <TechBadge tech="React" size="md" />
+                  <TechBadge tech="Next.js" size="md" />
                 </div>
               </div>
               <div className="skills-card-mock">
                 <h3>Développement Back</h3>
                 <div className="skill-tags">
-                  <code>Node.js / Express</code>
-                  <code>PHP / Laravel</code>
-                  <code>REST & GraphQL</code>
-                  <code>PostgreSQL / MongoDB</code>
+                  <TechBadge tech="Node.js" size="md" />
+                  <TechBadge tech="Express" size="md" />
+                  <TechBadge tech="PHP" size="md" />
+                  <TechBadge tech="Laravel" size="md" />
+                  <TechBadge tech="REST & GraphQL" size="md" />
+                  <TechBadge tech="MySQL" size="md" />
+                  <TechBadge tech="MongoDB" size="md" />
                 </div>
               </div>
               <div className="skills-card-mock">
                 <h3>Dispositifs Interactifs & IoT</h3>
                 <div className="skill-tags">
-                  <code>Arduino / ESP32</code>
-                  <code>C++</code>
-                  <code>MQTT / WebSockets</code>
-                  <code>Creative Coding (P5.js)</code>
+                  <TechBadge tech="Arduino" size="md" />
+                  <TechBadge tech="ESP32" size="md" />
+                  <TechBadge tech="C++" size="md" />
+                  <TechBadge tech="MQTT" size="md" />
+                  <TechBadge tech="WebSockets" size="md" />
+                  <TechBadge tech="Creative Coding (P5.js)" size="md" />
                 </div>
               </div>
               <div className="skills-card-mock">
                 <h3>Design & Outils</h3>
                 <div className="skill-tags">
-                  <code>Figma (UI/UX)</code>
-                  <code>Git & GitHub</code>
-                  <code>Suite Adobe</code>
-                  <code>Vercel / Netlify</code>
+                  <TechBadge tech="Figma" size="md" />
+                  <TechBadge tech="Git" size="md" />
+                  <TechBadge tech="GitHub" size="md" />
+                  <TechBadge tech="Suite Adobe" size="md" />
+                  <TechBadge tech="Vercel" size="md" />
+                  <TechBadge tech="Netlify" size="md" />
                 </div>
               </div>
             </div>
@@ -224,6 +235,7 @@ function App() {
       </main>
 
       <Footer />
+      <ScrollToTop />
     </div>
   );
 }

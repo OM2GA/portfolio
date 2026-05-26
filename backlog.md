@@ -145,16 +145,16 @@ _Développement des composants de base réutilisables qui structureront l'ensemb
     - [x] Liens rapides vers les profils professionnels (GitHub, LinkedIn, Email).
     - [x] Mention du copyright avec année dynamique.
 
-- [ ] **[CORE-06] Composant Badges Technologiques (TechBadge)**
+- [x] **[CORE-06] Composant Badges Technologiques (TechBadge)**
   - **Description** : Composant affichant les technologies utilisées sous forme de pastilles ou de badges avec couleurs/icônes personnalisées.
   - **Critères d'acceptation** :
-    - [ ] Badges réutilisables au sein des cartes projets et de la section compétences.
+    - [x] Badges réutilisables au sein des cartes projets et de la section compétences.
 
-- [ ] **[CORE-07] Bouton de retour en haut (ScrollToTop)**
+- [x] **[CORE-07] Bouton de retour en haut (ScrollToTop)**
   - **Description** : Créer un bouton flottant discret qui apparaît uniquement après un certain niveau de défilement (scroll) pour faciliter la remontée rapide.
   - **Critères d'acceptation** :
-    - [ ] Bouton invisible en haut de page, apparaissant en douceur (fade-in) après 400px de scroll.
-    - [ ] Défilement fluide vers le haut lors du clic.
+    - [x] Bouton invisible en haut de page, apparaissant en douceur (fade-in) après 400px de scroll.
+    - [x] Défilement fluide vers le haut lors du clic.
 
 - [ ] **[CORE-08] Système de Thème Sombre / Clair (Dark Mode Toggle)**
   - **Description** : Implémenter un commutateur permettant de passer du thème sombre au thème clair de manière transparente et persistante.
