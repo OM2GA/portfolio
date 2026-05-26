@@ -174,10 +174,10 @@ _Développement des blocs de contenus indispensables qui composent la page princ
     - [x] Affichage du titre principal (`<h1>` unique pour le SEO).
     - [x] CTA principal évident ("Voir mes projets") et secondaire ("Télécharger mon CV").
 
-- [ ] **[VIEW-02] Section Hero : Effet interactif de texte**
+- [x] **[VIEW-02] Section Hero : Effet interactif de texte**
   - **Description** : Ajouter un effet interactif pour dynamiser la Hero section (ex: effet d'auto-typing décrivant tes casquettes : "Développeur Front-End", "Passionné d'IoT", "Créateur de dispositifs interactifs").
   - **Critères d'acceptation** :
-    - [ ] Effet d'écriture fluide et sans bug de mise en page (pas de décalage de conteneur).
+    - [x] Effet d'écriture fluide et sans bug de mise en page (pas de décalage de conteneur).
 
 - [ ] **[VIEW-03] Section À Propos (About) : Présentation et Profil**
   - **Description** : Rédiger une biographie concise expliquant ton profil BUT MMI (polyvalence design/technique) et ton projet professionnel.

@@ -5,6 +5,7 @@ import Button from './components/Button';
 import ProjectCard from './components/ProjectCard';
 import TechBadge from './components/TechBadge';
 import ScrollToTop from './components/ScrollToTop';
+import Typewriter from './components/Typewriter';
 import { projects } from './data/projects';
 import './App.css';
 
@@ -24,7 +25,14 @@ function App() {
                   <span>Disponible Alternance BUT3 - Sept. 26</span>
                 </div>
                 <h1 className="hero-title">
-                  Développeur Web & Concepteur d'Interfaces Interactives
+                  Développeur Web & <br />
+                  <Typewriter
+                    words={[
+                      "Concepteur d'Interfaces",
+                      "Passionné d'IoT",
+                      'Créateur de dispositifs interactifs',
+                    ]}
+                  />
                 </h1>
                 <p className="hero-description">
                   Actuellement en BUT MMI, je conçois des applications web performantes et des

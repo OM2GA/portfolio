@@ -1,0 +1,36 @@
+.typewriter {
+  display: inline-block;
+  min-height: 2.3em; /* Keep space for 2 lines on small screens to prevent layout shifts */
+  vertical-align: top;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .typewriter {
+    min-height: 1.25em; /* Only needs 1 line on larger screens */
+  }
+}
+
+.typewriter-text {
+  /* Inherits title font and color gradient */
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  margin-left: 4px;
+  color: var(--accent-secondary);
+  /* Override parent transparent text fill from gradient background clipping */
+  -webkit-text-fill-color: var(--accent-secondary) !important;
+  font-weight: 300;
+  animation: typewriter-blink 1.1s step-end infinite;
+}
+
+@keyframes typewriter-blink {
+  from,
+  to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
