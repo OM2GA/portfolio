@@ -98,10 +98,10 @@ _Mise en place de l'environnement de développement pour démarrer sur des bases
     - [x] Système de routage en place et fonctionnel sans erreur de redirection.
     - [x] Gestion du scroll fluide (smooth scrolling) activée par défaut.
 
-- [ ] **[TECH-05] Intégration d'une bibliothèque d'icônes**
+- [x] **[TECH-05] Intégration d'une bibliothèque d'icônes**
   - **Description** : Configurer une librairie d'icônes vectorielles légères et modernes.
   - **Critères d'acceptation** :
-    - [ ] Bibliothèque configurée (ex: `lucide-react`, `react-icons` ou icônes SVG optimisées importées directement).
+    - [x] Bibliothèque configurée (ex: `lucide-react`, `react-icons` ou icônes SVG optimisées importées directement).
 
 - [ ] **[TECH-06] Modélisation et stockage des données des projets**
   - **Description** : Créer un stockage propre pour les projets (fichiers JSON locaux ou fichiers Markdown avec frontmatter) pour séparer le contenu de la logique de présentation.
