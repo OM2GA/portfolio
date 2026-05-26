@@ -1,3 +1,4 @@
+import { ArrowRight, Download } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Button from './components/Button';
@@ -26,15 +27,29 @@ function App() {
                   Développeur Web & Concepteur d'Interfaces Interactives
                 </h1>
                 <p className="hero-description">
-                  Actuellement en BUT MMI, je conçois des applications web modernes, performantes et
-                  accessibles, et je développe des dispositifs connectés innovants (IoT).
+                  Actuellement en BUT MMI, je conçois des applications web performantes et des
+                  dispositifs connectés innovants. À la recherche d'une{' '}
+                  <strong>alternance de 3ème année</strong> à partir de septembre 2026 pour
+                  concrétiser vos projets de bout en bout.
                 </p>
                 <div className="hero-actions">
-                  <Button href="#projects" variant="glow" size="lg">
+                  <Button
+                    href="#projects"
+                    variant="glow"
+                    size="lg"
+                    rightIcon={<ArrowRight size={20} />}
+                  >
                     Voir les Projets
                   </Button>
-                  <Button href="#contact" variant="secondary" size="lg">
-                    Me Contacter
+                  <Button
+                    href="/CV_Maxence_Coste.pdf"
+                    variant="secondary"
+                    size="lg"
+                    leftIcon={<Download size={20} />}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Télécharger mon CV
                   </Button>
                 </div>
               </div>

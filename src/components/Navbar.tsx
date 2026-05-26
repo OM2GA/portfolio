@@ -41,6 +41,8 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    const attr = document.documentElement.getAttribute('data-theme');
+    if (attr === 'dark' || attr === 'light') return attr;
     const saved = localStorage.getItem('theme');
     if (saved === 'dark' || saved === 'light') return saved;
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
@@ -52,6 +54,31 @@ export default function Navbar() {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
   }, [theme]);
+
+  // Dynamic system preference change listener
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: light)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      const saved = localStorage.getItem('theme');
+      if (!saved) {
+        setTheme(e.matches ? 'light' : 'dark');
+      }
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, []);
+
+  // Multi-tab/window theme synchronization
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === 'theme' && (e.newValue === 'dark' || e.newValue === 'light')) {
+        setTheme(e.newValue);
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+    return () => window.removeEventListener('storage', handleStorageChange);
+  }, []);
 
   // Scroll handler for navbar contraction
   useEffect(() => {

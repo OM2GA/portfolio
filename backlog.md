@@ -156,11 +156,11 @@ _Développement des composants de base réutilisables qui structureront l'ensemb
     - [x] Bouton invisible en haut de page, apparaissant en douceur (fade-in) après 400px de scroll.
     - [x] Défilement fluide vers le haut lors du clic.
 
-- [ ] **[CORE-08] Système de Thème Sombre / Clair (Dark Mode Toggle)**
+- [x] **[CORE-08] Système de Thème Sombre / Clair (Dark Mode Toggle)**
   - **Description** : Implémenter un commutateur permettant de passer du thème sombre au thème clair de manière transparente et persistante.
   - **Critères d'acceptation** :
-    - [ ] Thème sauvegardé dans le `localStorage` pour persister lors des futures visites.
-    - [ ] Détection automatique des préférences système de l'utilisateur (`prefers-color-scheme`).
+    - [x] Thème sauvegardé dans le `localStorage` pour persister lors des futures visites.
+    - [x] Détection automatique des préférences système de l'utilisateur (`prefers-color-scheme`).
 
 ---
 
@@ -168,11 +168,11 @@ _Développement des composants de base réutilisables qui structureront l'ensemb
 
 _Développement des blocs de contenus indispensables qui composent la page principale._
 
-- [ ] **[VIEW-01] Section Hero (Accueil) : Premier contact**
+- [x] **[VIEW-01] Section Hero (Accueil) : Premier contact**
   - **Description** : Rédiger et intégrer une phrase d'accroche percutante mettant en avant ta spécialité BUT MMI Web Dev et tes compétences.
   - **Critères d'acceptation** :
-    - [ ] Affichage du titre principal (`<h1>` unique pour le SEO).
-    - [ ] CTA principal évident ("Voir mes projets") et secondaire ("Télécharger mon CV").
+    - [x] Affichage du titre principal (`<h1>` unique pour le SEO).
+    - [x] CTA principal évident ("Voir mes projets") et secondaire ("Télécharger mon CV").
 
 - [ ] **[VIEW-02] Section Hero : Effet interactif de texte**
   - **Description** : Ajouter un effet interactif pour dynamiser la Hero section (ex: effet d'auto-typing décrivant tes casquettes : "Développeur Front-End", "Passionné d'IoT", "Créateur de dispositifs interactifs").
