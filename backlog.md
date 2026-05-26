@@ -120,12 +120,12 @@ _Développement des composants de base réutilisables qui structureront l'ensemb
     - [x] Props du composant définies proprement (icones optionnelles, tailles, variantes).
     - [x] Micro-interactions au survol (hover) fluides avec transitions CSS.
 
-- [ ] **[CORE-02] Composant Carte de Projet (ProjectCard)**
+- [x] **[CORE-02] Composant Carte de Projet (ProjectCard)**
   - **Description** : Créer la carte interactive affichant un projet de manière synthétique avant d'accéder aux détails.
   - **Critères d'acceptation** :
-    - [ ] Affichage de l'image de couverture, du titre, d'une courte description et des technologies associées.
-    - [ ] Présence d'un lien vers la démo en ligne et/ou le dépôt GitHub.
-    - [ ] Effet au survol élégant (ex: zoom léger de l'image, surbrillance de la bordure).
+    - [x] Affichage de l'image de couverture, du titre, d'une courte description et des technologies associées.
+    - [x] Présence d'un lien vers la démo en ligne et/ou le dépôt GitHub.
+    - [x] Effet au survol élégant (ex: zoom léger de l'image, surbrillance de la bordure).
 
 - [ ] **[CORE-03] Composant En-tête / Navigation (Navbar)**
   - **Description** : Créer la barre de navigation principale qui reste accessible lors du défilement.

@@ -1,6 +1,8 @@
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Button from './components/Button';
+import ProjectCard from './components/ProjectCard';
+import { projects } from './data/projects';
 import './App.css';
 
 function App() {
@@ -121,30 +123,10 @@ function App() {
             <p className="section-subtitle">
               Découvrez une sélection de mes réalisations académiques (SAÉ) et personnelles.
             </p>
-            <div className="projects-grid-placeholder">
-              <div className="project-card-mock span-2">
-                <div className="project-card-badge">SAÉ Majeure</div>
-                <h3>Plateforme Web Collaborative</h3>
-                <p>
-                  Application fullstack de gestion de projet en temps réel avec authentification
-                  sécurisée.
-                </p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>PostgreSQL</span>
-                </div>
-              </div>
-              <div className="project-card-mock">
-                <div className="project-card-badge">IoT / Interactif</div>
-                <h3>Station Météo Connectée</h3>
-                <p>Dashboard de monitoring météo en temps réel via WebSockets et protocole MQTT.</p>
-                <div className="project-tags">
-                  <span>Arduino</span>
-                  <span>C++</span>
-                  <span>WebSockets</span>
-                </div>
-              </div>
+            <div className="projects-grid">
+              {projects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
             </div>
           </div>
         </section>
