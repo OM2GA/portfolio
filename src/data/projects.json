@@ -1,0 +1,146 @@
+[
+  {
+    "id": "20-bornes-andresy",
+    "title": "Les 20 Bornes d'Andrésy",
+    "category": "Projet Personnel",
+    "role": "Designer UI & Développeur Front-End",
+    "stack": ["HTML5", "CSS3", "Bootstrap 5.3", "JavaScript Vanilla"],
+    "status": "En production",
+    "demoUrl": "http://20bornes.chez.com/",
+    "images": {
+      "mockup": "/assets/images/mockup_pc_mobile.png",
+      "thumbnail": "/assets/images/accueil_20bornes.png"
+    },
+    "rhPath": {
+      "context": "L'événement annuel des '20 Bornes d'Andrésy' est une course populaire majeure. Cependant, son portail historique était vieillissant, illisible sur mobile (non responsive), et présentait des lenteurs de chargement. Cette vitrine obsolète pénalisait les inscriptions et l'image moderne de la ville.",
+      "solution": "En totale autonomie, j'ai conçu et développé une refonte complète de l'interface. Mon but était de redonner de l'énergie visuelle à l'événement tout en clarifiant le parcours d'inscription. J'ai présenté cette initiative de manière proactive à la Mairie d'Andrésy qui, séduite par la qualité du travail, l'a adoptée comme site officiel de l'événement.",
+      "results": [
+        "Autonomie & Proactivité : Capacité à mener un projet de A à Z et à convaincre un acteur institutionnel (Mairie).",
+        "Expérience Utilisateur (UX) Maximisée : Restructuration de l'information permettant d'accéder aux détails de chaque course et au formulaire d'inscription en moins de 3 clics.",
+        "Clarté & Ergonomie : Différenciation de chaque épreuve (10km, 5km, Semi) par un code couleur rigoureux pour guider l'utilisateur."
+      ]
+    },
+    "techPath": {
+      "architecture": "Pour assurer une compatibilité maximale et une vitesse d'affichage instantanée, j'ai opté pour une structure statique hautement optimisée. Bootstrap 5.3 a été choisi pour établir la grille responsive, complété par une importante couche CSS personnalisée pour éviter l'effet 'gabarit générique'.",
+      "challenges": [
+        "Performance Web Extrême : Compression et conversion de toutes les images au format moderne .webp, minification des ressources et chargement différé (loading=\"lazy\").",
+        "SEO Technique & Sémantique : Balisage HTML5 sémantique strict (<header>, <nav>, <main>, <section>, <article>), hiérarchie de titres (h1 unique à h6), balises Meta optimisées.",
+        "Micro-interactions Polies : Développement d'une barre de navigation fixe (fixed-top) intégrant un effet de survol (hover) soigné et des espacements fluides pour améliorer le confort de clic."
+      ],
+      "metrics": {
+        "seo": 100,
+        "performance": 99,
+        "accessibility": 91
+      }
+    }
+  },
+  {
+    "id": "oishi-sushi-shop",
+    "title": "Oishi - Sushi Shop",
+    "category": "Projet Universitaire",
+    "role": "Chef d'équipe & Développeur Fullstack",
+    "teamSize": 4,
+    "teamRole": "Chef d'équipe & Développeur Fullstack",
+    "stack": ["Angular", "PHP", "MySQL", "Trello", "Git"],
+    "status": "Prototype fonctionnel",
+    "images": {
+      "mockup": "/assets/images/maquette_oishi.png",
+      "thumbnail": "/assets/images/connexion_oishi.png"
+    },
+    "rhPath": {
+      "context": "Dans le cadre de notre formation BUT MMI, nous devions simuler la création complète d'une plateforme de commerce électronique pour un restaurant de sushis fictif ('Oishi'). La problématique était de concevoir un parcours utilisateur fluide, de la consultation du catalogue à la validation du panier, dans un cadre de développement en équipe.",
+      "solution": "En tant que Chef d'équipe, j'ai coordonné le projet en utilisant la méthode Agile (gestion des tâches via Trello, rituels de suivi). Sur le plan technique, j'ai agi en tant que développeur fullstack, structurant la base de données et développant l'API de communication.",
+      "results": [
+        "Leadership & Gestion d'Équipe : Attribution des rôles selon les forces de chacun (design vs code), gestion des plannings et résolution des blocages techniques.",
+        "Collaboration Git : Mise en place d'un workflow Git rigoureux (branches de fonctionnalités, Pull Requests) pour éviter les conflits de code à 4 développeurs.",
+        "Parcours Client Intégral : Création d'une expérience complète (Authentification sécurisée, catalogue réactif, gestion du panier dynamique)."
+      ]
+    },
+    "techPath": {
+      "architecture": "Découplage strict (headless architecture) avec un Frontend moderne propulsé par Angular communiquant via des requêtes HTTP asynchrones avec une API RESTful PHP connectée à une base de données relationnelle MySQL.",
+      "challenges": [
+        "Apprentissage Accéléré d'Angular : Prise en main et implémentation en autonomie des concepts clés d'Angular (architecture par composants réutilisables, Services d'injection de dépendances, RxJS Observables, et Routing client-side).",
+        "Sécurisation & Persistance de Session : Développement d'un module d'inscription/connexion sécurisé côté API PHP avec stockage et contrôle de session persistant côté client.",
+        "Création de l'API PHP RESTful : Conception d'endpoints légers retournant des données structurées en JSON pour alimenter dynamiquement l'interface Angular."
+      ]
+    },
+    "codeSnippet": {
+      "filename": "API/boxes.php",
+      "language": "php",
+      "code": "<?php\nheader(\"Access-Control-Allow-Origin: *\");\nheader(\"Content-Type: application/json; charset=UTF-8\");\n\ninclude_once 'db.php';\n\n// Logique de requête préparée SQL sécurisée contre les injections\n$query = \"SELECT id, nom, pieces, prix, image FROM boxes\";\n$stmt = $db->prepare($query);\n$stmt->execute();\n\nif($stmt->rowCount() > 0){\n    $boxes_arr = array(\"records\" => array());\n    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)){\n        extract($row);\n        $item = array(\"id\" => $id, \"nom\" => $nom, \"pieces\" => $pieces, \"prix\" => $prix, \"image\" => $image);\n        array_push($boxes_arr[\"records\"], $item);\n    }\n    http_response_code(200);\n    echo json_encode($boxes_arr);\n} else {\n    http_response_code(404);\n    echo json_encode(array(\"message\" => \"Aucun produit disponible\"));\n}"
+    }
+  },
+  {
+    "id": "decathlon-profiler",
+    "title": "Decathlon Profiler",
+    "category": "Hackathon National",
+    "role": "Développeur Unique & Designer UI",
+    "teamSize": 4,
+    "teamRole": "Développeur Unique & Designer UI",
+    "stack": ["HTML5", "CSS3", "JavaScript Vanilla", "Bootstrap 5"],
+    "status": "Livré à temps et fonctionnel",
+    "images": {
+      "mockup": "/assets/images/decathlon_accueil.png",
+      "thumbnail": "/assets/images/decathlon_questionnaire.png"
+    },
+    "rhPath": {
+      "context": "Lors de la Nuit de l'Info (défi de codage national de 15h non-stop), notre équipe a choisi de relever le défi de connecter l'informatique au sport pour prévenir les blessures. La contrainte ? Concevoir, designer, rédiger et développer un prototype interactif de profilage postural sportif en moins de 2 heures !",
+      "solution": "En tant que seul développeur de l'équipe, j'ai dû concevoir une interface fidèle à l'identité visuelle de Decathlon tout en codant l'intelligence de l'application. Pendant que mes coéquipiers rédigeaient les conseils médicaux et posturaux, j'ai implémenté un système de questionnaire dynamique et fluide.",
+      "results": [
+        "Gestion du Stress & Priorisation : Prise de décision rapide quant à la faisabilité technique. Élimination des frameworks lourds pour garantir une livraison à l'heure.",
+        "Respect de l'Identité de Marque : Intégration impeccable du bleu Decathlon et de la police Roboto Condensed pour une immersion totale.",
+        "Synergie d'Équipe : Intégration en temps réel des flux de contenus rédigés par mes coéquipiers au fur et à mesure de l'avancement."
+      ]
+    },
+    "techPath": {
+      "architecture": "Contraint par le temps, j'ai banni toute base de données ou serveur dynamique. J'ai conçu une architecture 100% statique client-side où toute la logique métier s'exécute directement dans le navigateur de l'utilisateur en JavaScript pur, assurant une vitesse de réponse instantanée.",
+      "challenges": [
+        "Simulation de Single Page Application (SPA) : Le questionnaire fait défiler les questions sans aucun rechargement de page en masquant et affichant dynamiquement des conteneurs via JavaScript.",
+        "Algorithme de Profilage : Calcul en temps réel du profil sportif dominant (profil A, B, C, D) selon les réponses, puis redirection intelligente par ancre d'URL (hash routing).",
+        "Mise en page réactive par CSS :target : Utilisation du pseudo-sélecteur CSS :target pour afficher de manière élégante et ultra-rapide uniquement le profil de conseils correspondant à l'ancre URL active (ex: conseils.html#profil-c), sans aucun appel JS additionnel sur la page de destination."
+      ]
+    },
+    "codeSnippet": {
+      "filename": "script.js",
+      "language": "javascript",
+      "code": "function showResult() {\n  let maxScore = 0;\n  let finalProfile = 'A';\n\n  for (const [profile, score] of Object.entries(scores)) {\n    if (score > maxScore) {\n      maxScore = score;\n      finalProfile = profile;\n    }\n  }\n\n  window.location.href = `conseils.html#profil-${finalProfile}`;\n}"
+    }
+  },
+  {
+    "id": "coulisses-gym",
+    "title": "Les Coulisses de la Gym",
+    "category": "Projet Universitaire",
+    "role": "Développeur Fullstack & Photographe / Vidéaste",
+    "teamSize": 5,
+    "teamRole": "Développeur Unique & Photographe / Vidéaste",
+    "stack": ["HTML5", "CSS3", "JavaScript Vanilla"],
+    "status": "En ligne",
+    "demoUrl": "https://webdoc-gymnastique.alwaysdata.net/",
+    "images": {
+      "mockup": "/assets/images/webdoc_accueil.png",
+      "thumbnail": "/assets/images/webdoc_accueil.png"
+    },
+    "rhPath": {
+      "context": "Ce projet tuteuré visait à documenter la vie sportive et associative d'un club de gymnastique (Courtry) préparant les championnats de France. L'enjeu était de proposer un web-documentaire immersif et interactif capable d'intégrer harmonieusement des formats très variés : vidéos d'entraînements, galeries photo de haute qualité, podcasts audio et articles journalistiques.",
+      "solution": "Ce projet illustre parfaitement ma polyvalence MMI. En tant que développeur unique du groupe de 5 étudiants, j'ai programmé l'ensemble du site. Parallèlement, je suis allé sur le terrain pour réaliser des captations photographiques (Reflex DSLR) et vidéos, et j'ai rédigé un article de fond sur la réglementation des tenues de gymnastique.",
+      "results": [
+        "Esprit Pluridisciplinaire : Transition fluide entre la casquette technique (code JS) et la casquette artistique (photographie, écriture).",
+        "Coordination des Médias : Gestion et intégration d'une bibliothèque volumineuse de médias produits par l'ensemble du groupe.",
+        "Immersion Émotionnelle : Création d'une navigation vivante qui plonge le visiteur dans l'atmosphère sonore et visuelle de la salle de sport."
+      ]
+    },
+    "techPath": {
+      "architecture": "Le webdocumentaire devant être une œuvre numérique artisanale, j'ai fait le choix exigeant du 100% Vanilla JS, HTML5 et CSS3. Aucun framework Frontend (React/Angular) ou bibliothèque d'animation n'a été utilisé, me forçant à programmer chaque composant interactif à la main.",
+      "challenges": [
+        "Carrousel 3D 'Cover Flow' Custom : Développement d'un carrousel d'articles tridimensionnel calculant dynamiquement en JS les plans de profondeur (z-index), l'opacité et les transformations 3D (transform: scale() translate3d()) des éléments adjacents.",
+        "Lecteur Audio Interactif Thématique : Intégration d'un player audio personnalisé pour les interviews, connecté à des animations CSS simulant un disque vinyle qui tourne au rythme de la lecture.",
+        "Système de Lecture Immersive (Modales) : Développement d'un module d'affichage d'articles en surimpression (modales) gérant parfaitement l'accessibilité au clavier (fermeture via Escape) et évitant le défilement de l'arrière-plan."
+      ]
+    },
+    "codeSnippet": {
+      "filename": "carousel.js",
+      "language": "javascript",
+      "code": "function updateCarousel() {\n  const items = document.querySelectorAll('.carousel-item');\n  items.forEach((item, index) => {\n    item.classList.remove('active', 'prev', 'next');\n    if (index === activeIndex) {\n      item.classList.add('active');\n      item.style.transform = 'scale(1) translate3d(0, 0, 0)';\n      item.style.zIndex = 3;\n      item.style.opacity = 1;\n    } else if (index === (activeIndex - 1 + items.length) % items.length) {\n      item.classList.add('prev');\n      item.style.transform = 'scale(0.8) translate3d(-100px, 0, -50px)';\n      item.style.zIndex = 2;\n      item.style.opacity = 0.6;\n    } else if (index === (activeIndex + 1) % items.length) {\n      item.classList.add('next');\n      item.style.transform = 'scale(0.8) translate3d(100px, 0, -50px)';\n      item.style.zIndex = 2;\n      item.style.opacity = 0.6;\n    } else {\n      item.style.transform = 'scale(0.6) translate3d(0, 0, -100px)';\n      item.style.zIndex = 1;\n      item.style.opacity = 0;\n    }\n  });\n}"
+    }
+  }
+]

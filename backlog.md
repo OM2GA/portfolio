@@ -103,10 +103,10 @@ _Mise en place de l'environnement de développement pour démarrer sur des bases
   - **Critères d'acceptation** :
     - [x] Bibliothèque configurée (ex: `lucide-react`, `react-icons` ou icônes SVG optimisées importées directement).
 
-- [ ] **[TECH-06] Modélisation et stockage des données des projets**
+- [x] **[TECH-06] Modélisation et stockage des données des projets**
   - **Description** : Créer un stockage propre pour les projets (fichiers JSON locaux ou fichiers Markdown avec frontmatter) pour séparer le contenu de la logique de présentation.
   - **Critères d'acceptation** :
-    - [ ] Fichier de données de test en place contenant les détails d'au moins 3 projets.
+    - [x] Fichier de données de test en place contenant les détails d'au moins 3 projets.
 
 - [ ] **[TECH-07] Setup du déploiement continu (CI/CD) de test**
   - **Description** : Connecter ton dépôt GitHub à ton service d'hébergement (Vercel ou Netlify) pour valider que le processus de build fonctionne dès le début du développement.
