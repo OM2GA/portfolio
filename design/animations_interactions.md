@@ -330,6 +330,7 @@ Sur survol Desktop, la carte Bento s'incline légèrement en trois dimensions en
   ```
 
 - **JS de calcul d'inclinaison mathématique** :
+
   ```javascript
   bentoCards.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
@@ -387,6 +388,7 @@ Ce terminal interactif de style rétro tape du texte de manière programmatique 
 
 - **Animation de dactylographie simulant la saisie (Typing Effect)** :
   L'effet de saisie d'une commande (ex: `npx maxence-coste`) s'exécute lorsque la carte Bento du terminal devient visible :
+
   ```javascript
   function typeCommand(element, text, speed = 80) {
     let i = 0;

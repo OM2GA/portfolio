@@ -162,6 +162,7 @@ graph TD
   - **Algorithme de Profilage** : Calcul en temps réel du profil sportif dominant (profil A, B, C, D) selon les réponses, puis redirection intelligente par ancre d'URL (hash routing).
   - **Mise en page réactive par CSS `:target`** : Utilisation du pseudo-sélecteur CSS `:target` pour afficher de manière élégante et ultra-rapide uniquement le profil de conseils correspondant à l'ancre URL active (ex: `conseils.html#profil-c`), sans aucun appel JS additionnel sur la page de destination.
 - **Focus Code (Algorithme de calcul du profil)** :
+
   ```javascript
   // Calcule le profil majoritaire à partir des scores accumulés
   function showResult() {
@@ -220,6 +221,7 @@ graph TD
   - **Lecteur Audio Interactif Thématique** : Intégration d'un player audio personnalisé pour les interviews, connecté à des animations CSS simulant un disque vinyle qui tourne au rythme de la lecture.
   - **Système de Lecture Immersive (Modales)** : Développement d'un module d'affichage d'articles en surimpression (modales) gérant parfaitement l'accessibilité au clavier (fermeture via `Escape`) et évitant le défilement de l'arrière-plan.
 - **Focus Code (Logique d'animation du Carrousel 3D)** :
+
   ```javascript
   // Gestion simplifiée du carrousel avec effet de profondeur CSS
   function updateCarousel() {

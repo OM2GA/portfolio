@@ -86,11 +86,11 @@ _Mise en place de l'environnement de développement pour démarrer sur des bases
     - [x] Script de linting/formatting fonctionnel dans le `package.json`.
     - [x] Fichier `.gitignore` configuré pour exclure le dossier `node_modules` et les builds.
 
-- [ ] **[TECH-03] Configuration du CSS & du Design System**
+- [x] **[TECH-03] Configuration du CSS & du Design System**
   - **Description** : Mettre en place la couche de style (CSS pur, SCSS pour la modularité, ou TailwindCSS). Déclarer les variables globales de style (Custom Properties) correspondant à la DA.
   - **Critères d'acceptation** :
-    - [ ] Fichier CSS global configuré avec les variables (couleurs HSL, fonts, espacements).
-    - [ ] Reset CSS moderne (type Josh Comeau ou Andy Bell) appliqué.
+    - [x] Fichier CSS global configuré avec les variables (couleurs HSL, fonts, espacements).
+    - [x] Reset CSS moderne (type Josh Comeau ou Andy Bell) appliqué.
 
 - [ ] **[TECH-04] Configuration du routage et de la navigation**
   - **Description** : Structurer la navigation de l'application (multi-pages physiques ou single-page fluide avec ancres URL).
