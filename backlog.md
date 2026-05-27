@@ -264,11 +264,11 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
     - [x] Liaison réussie avec un service gratuit (ex: EmailJS, Formspree ou via une Serverless API route).
     - [x] Message de succès et d'erreur propre affiché à l'utilisateur après soumission.
 
-- [ ] **[INT-08] Téléchargement dynamique du CV**
+- [x] **[INT-08] Téléchargement dynamique du CV**
   - **Description** : Mettre en ligne ton CV au format PDF et assurer son téléchargement ou son ouverture propre.
   - **Critères d'acceptation** :
-    - [ ] Fichier PDF compressé pour le web (léger mais parfaitement net).
-    - [ ] Bouton ouvrant le CV dans un nouvel onglet avec l'attribut `target="_blank"` et `rel="noopener noreferrer"`.
+    - [x] Fichier PDF compressé pour le web (léger mais parfaitement net).
+    - [x] Bouton ouvrant le CV dans un nouvel onglet avec l'attribut `target="_blank"` et `rel="noopener noreferrer"`.
 
 ---
 

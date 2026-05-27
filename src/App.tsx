@@ -301,7 +301,8 @@ function App() {
               <ScrollReveal direction="up">
                 <h2 className="section-title">Terminal CLI Interactif</h2>
                 <p className="section-subtitle">
-                  Pour les recruteurs techniques : explorez mon profil, mes compétences et mes projets en ligne de commande.
+                  Pour les recruteurs techniques : explorez mon profil, mes compétences et mes
+                  projets en ligne de commande.
                 </p>
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>

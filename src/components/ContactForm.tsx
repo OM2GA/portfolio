@@ -1,5 +1,14 @@
 import React, { useState } from 'react';
-import { AlertCircle, CheckCircle, Send, Sparkles, Mail, User, MessageSquare, Info } from 'lucide-react';
+import {
+  AlertCircle,
+  CheckCircle,
+  Send,
+  Sparkles,
+  Mail,
+  User,
+  MessageSquare,
+  Info,
+} from 'lucide-react';
 import Button from './Button';
 import './ContactForm.css';
 
@@ -22,7 +31,8 @@ export default function ContactForm() {
 
   // Check if API key is set. In Vite, environment variables must start with VITE_
   const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
-  const isDemoMode = !accessKey || accessKey.trim() === '' || accessKey.trim() === 'your_access_key_here';
+  const isDemoMode =
+    !accessKey || accessKey.trim() === '' || accessKey.trim() === 'your_access_key_here';
 
   // Form validation rules (computed on the fly)
   const errors = {
@@ -121,11 +131,16 @@ export default function ContactForm() {
           setFormData({ name: '', email: '', message: '' });
           setTouched({ name: false, email: false, message: false });
         } else {
-          throw new Error(result.message || "Une erreur est survenue lors de l'envoi de votre message.");
+          throw new Error(
+            result.message || "Une erreur est survenue lors de l'envoi de votre message."
+          );
         }
       } catch (err: unknown) {
         setIsSubmitting(false);
-        const errorMessage = err instanceof Error ? err.message : "Une erreur réseau est survenue. Veuillez vérifier votre connexion et réessayer.";
+        const errorMessage =
+          err instanceof Error
+            ? err.message
+            : 'Une erreur réseau est survenue. Veuillez vérifier votre connexion et réessayer.';
         setSubmitError(errorMessage);
       }
     }
@@ -163,9 +178,7 @@ export default function ContactForm() {
           <AlertCircle size={48} className="error-icon" />
         </div>
         <h3 className="error-title">Erreur d'envoi !</h3>
-        <p className="error-description">
-          {submitError}
-        </p>
+        <p className="error-description">{submitError}</p>
         <Button variant="secondary" onClick={handleReset} leftIcon={<AlertCircle size={18} />}>
           Réessayer
         </Button>
@@ -181,7 +194,8 @@ export default function ContactForm() {
           <div className="demo-banner-content">
             <h4 className="demo-banner-title">Mode Démo Actif</h4>
             <p className="demo-banner-text">
-              L'envoi est simulé. Pour recevoir de vrais e-mails, configurez votre clé Web3Forms gratuite dans le fichier <code>.env</code>.
+              L'envoi est simulé. Pour recevoir de vrais e-mails, configurez votre clé Web3Forms
+              gratuite dans le fichier <code>.env</code>.
             </p>
           </div>
         </div>

@@ -45,17 +45,20 @@ export default function Terminal() {
   const welcomeBanner = (
     <div className="terminal-welcome">
       <div className="terminal-banner">
-{` __  __                                         
+        {` __  __                                         
 |  \\/  | __ ___  _____ _ __   ___ ___           
 | |\\/| |/ _\` \\ \\/ / _ \\ '_ \\ / __/ _ \\          
 | |  | | (_| |>  <  __/ | | | (_|  __/          
 |_|  |_|\\__,_/_/\\_\\___|_| |_|\\___\\___|          `}
       </div>
       <p className="terminal-welcome-text">
-        <span className="terminal-welcome-highlight">Bienvenue sur le terminal de Maxence Coste v1.0.0 !</span>
+        <span className="terminal-welcome-highlight">
+          Bienvenue sur le terminal de Maxence Coste v1.0.0 !
+        </span>
       </p>
       <p style={{ color: 'var(--text-secondary)', marginTop: '8px' }}>
-        Taper <span style={{ color: 'var(--accent-primary)', fontWeight: 'bold' }}>help</span> pour obtenir la liste des commandes et commencer l'exploration.
+        Taper <span style={{ color: 'var(--accent-primary)', fontWeight: 'bold' }}>help</span> pour
+        obtenir la liste des commandes et commencer l'exploration.
       </p>
     </div>
   );
@@ -79,233 +82,303 @@ export default function Terminal() {
   }, [history, autoTypedText, matrixText, scrollToBottom]);
 
   // Execute a command
-  const executeCommand = useCallback((cmd: string) => {
-    const trimmedCmd = cmd.trim().toLowerCase();
-    const commandName = trimmedCmd.split(' ')[0];
+  const executeCommand = useCallback(
+    (cmd: string) => {
+      const trimmedCmd = cmd.trim().toLowerCase();
+      const commandName = trimmedCmd.split(' ')[0];
 
-    let output: string | React.ReactNode = '';
+      let output: string | React.ReactNode = '';
 
-    // Add command to command history list
-    if (cmd.trim() !== '') {
-      setCommandHistory((prev) => [...prev, cmd]);
-    }
-    setHistoryIndex(-1);
+      // Add command to command history list
+      if (cmd.trim() !== '') {
+        setCommandHistory((prev) => [...prev, cmd]);
+      }
+      setHistoryIndex(-1);
 
-    switch (commandName) {
-      case '':
-        output = '';
-        break;
+      switch (commandName) {
+        case '':
+          output = '';
+          break;
 
-      case 'help':
-        output = (
-          <div>
-            <p className="cmd-accent cmd-bold" style={{ marginBottom: '8px' }}>
-              Commandes disponibles :
-            </p>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-              <tbody>
-                {availableCommands.map((c) => (
-                  <tr key={c.name} style={{ verticalAlign: 'top' }}>
-                    <td style={{ width: '120px', color: 'var(--accent-secondary)', fontWeight: 'bold', paddingBottom: '6px' }}>
-                      {c.name}
-                    </td>
-                    <td style={{ color: 'var(--text-secondary)', paddingBottom: '6px' }}>
-                      {c.desc}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        );
-        break;
-
-      case 'about':
-        output = (
-          <div style={{ color: 'var(--text-secondary)' }}>
-            <p>
-              <span className="cmd-bold cmd-success">Maxence Coste</span> - Étudiant en{' '}
-              <span className="cmd-bold">BUT MMI</span> (Métiers du Multimédia et de l'Internet) à Lyon.
-            </p>
-            <p style={{ marginTop: '8px' }}>
-              Spécialisé dans le <span className="cmd-bold cmd-accent">Développement Web</span> et la création de{' '}
-              <span className="cmd-bold cmd-accent">Dispositifs Interactifs & IoT</span>.
-            </p>
-            <p style={{ marginTop: '8px' }}>
-              Passionné par les interactions homme-machine, je connecte des capteurs réels à des
-              applications web en temps réel (Arduino, ESP32, WebSockets, React, TS).
-            </p>
-            <p style={{ marginTop: '8px', color: 'var(--text-primary)' }}>
-              👉 Recherche activement une <span className="cmd-bold cmd-accent">alternance BUT3 d'un an</span> à partir de septembre 2026.
-            </p>
-          </div>
-        );
-        break;
-
-      case 'skills':
-        output = (
-          <div>
-            <p className="cmd-bold cmd-accent" style={{ marginBottom: '8px' }}>
-              Compétences techniques :
-            </p>
-            <div className="terminal-grid">
-              <div className="terminal-grid-item">
-                <span className="cmd-bold" style={{ color: 'var(--accent-primary)' }}>1. FRONT-END</span>
-                <ul style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}>
-                  <li>React / TypeScript</li>
-                  <li>HTML5 / CSS3 (Bento, Flex)</li>
-                  <li>Animations (Framer, GSAP)</li>
-                </ul>
-              </div>
-              <div className="terminal-grid-item">
-                <span className="cmd-bold" style={{ color: 'var(--accent-secondary)' }}>2. BACK-END</span>
-                <ul style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}>
-                  <li>Node.js / Express</li>
-                  <li>APIs REST & WebSockets</li>
-                  <li>Bases de données SQL</li>
-                </ul>
-              </div>
-              <div className="terminal-grid-item">
-                <span className="cmd-bold" style={{ color: '#f59e0b' }}>3. DISPOSITIFS IOT</span>
-                <ul style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}>
-                  <li>C++ (Arduino, ESP32)</li>
-                  <li>Protocoles (MQTT, HTTP)</li>
-                  <li>Intégration Capteurs</li>
-                </ul>
-              </div>
-              <div className="terminal-grid-item">
-                <span className="cmd-bold" style={{ color: '#ef4444' }}>4. AUTRES</span>
-                <ul style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}>
-                  <li>Git / GitHub / Agile</li>
-                  <li>UI Design (Figma, Maquettes)</li>
-                  <li>Accessibilité (RGAA AA)</li>
-                </ul>
-              </div>
+        case 'help':
+          output = (
+            <div>
+              <p className="cmd-accent cmd-bold" style={{ marginBottom: '8px' }}>
+                Commandes disponibles :
+              </p>
+              <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <tbody>
+                  {availableCommands.map((c) => (
+                    <tr key={c.name} style={{ verticalAlign: 'top' }}>
+                      <td
+                        style={{
+                          width: '120px',
+                          color: 'var(--accent-secondary)',
+                          fontWeight: 'bold',
+                          paddingBottom: '6px',
+                        }}
+                      >
+                        {c.name}
+                      </td>
+                      <td style={{ color: 'var(--text-secondary)', paddingBottom: '6px' }}>
+                        {c.desc}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-          </div>
-        );
-        break;
+          );
+          break;
 
-      case 'projects':
-        output = (
-          <div>
-            <p className="cmd-bold cmd-accent" style={{ marginBottom: '8px' }}>
-              Sélection de Projets :
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              {projects.map((p, idx) => (
-                <div key={p.id} style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '10px' }}>
-                  <p className="cmd-bold" style={{ color: 'var(--text-primary)' }}>
-                    {idx + 1}. {p.title}{' '}
-                    <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>({p.category})</span>
-                  </p>
-                  <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem', margin: '2px 0' }}>
-                    {p.rhPath?.context.substring(0, 100)}...
-                  </p>
-                  <p style={{ fontSize: '0.75rem', color: 'var(--accent-secondary)' }}>
-                    Stack : {p.stack.join(', ')}
-                  </p>
+        case 'about':
+          output = (
+            <div style={{ color: 'var(--text-secondary)' }}>
+              <p>
+                <span className="cmd-bold cmd-success">Maxence Coste</span> - Étudiant en{' '}
+                <span className="cmd-bold">BUT MMI</span> (Métiers du Multimédia et de l'Internet) à
+                Lyon.
+              </p>
+              <p style={{ marginTop: '8px' }}>
+                Spécialisé dans le <span className="cmd-bold cmd-accent">Développement Web</span> et
+                la création de{' '}
+                <span className="cmd-bold cmd-accent">Dispositifs Interactifs & IoT</span>.
+              </p>
+              <p style={{ marginTop: '8px' }}>
+                Passionné par les interactions homme-machine, je connecte des capteurs réels à des
+                applications web en temps réel (Arduino, ESP32, WebSockets, React, TS).
+              </p>
+              <p style={{ marginTop: '8px', color: 'var(--text-primary)' }}>
+                👉 Recherche activement une{' '}
+                <span className="cmd-bold cmd-accent">alternance BUT3 d'un an</span> à partir de
+                septembre 2026.
+              </p>
+            </div>
+          );
+          break;
+
+        case 'skills':
+          output = (
+            <div>
+              <p className="cmd-bold cmd-accent" style={{ marginBottom: '8px' }}>
+                Compétences techniques :
+              </p>
+              <div className="terminal-grid">
+                <div className="terminal-grid-item">
+                  <span className="cmd-bold" style={{ color: 'var(--accent-primary)' }}>
+                    1. FRONT-END
+                  </span>
+                  <ul
+                    style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}
+                  >
+                    <li>React / TypeScript</li>
+                    <li>HTML5 / CSS3 (Bento, Flex)</li>
+                    <li>Animations (Framer, GSAP)</li>
+                  </ul>
                 </div>
-              ))}
+                <div className="terminal-grid-item">
+                  <span className="cmd-bold" style={{ color: 'var(--accent-secondary)' }}>
+                    2. BACK-END
+                  </span>
+                  <ul
+                    style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}
+                  >
+                    <li>Node.js / Express</li>
+                    <li>APIs REST & WebSockets</li>
+                    <li>Bases de données SQL</li>
+                  </ul>
+                </div>
+                <div className="terminal-grid-item">
+                  <span className="cmd-bold" style={{ color: '#f59e0b' }}>
+                    3. DISPOSITIFS IOT
+                  </span>
+                  <ul
+                    style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}
+                  >
+                    <li>C++ (Arduino, ESP32)</li>
+                    <li>Protocoles (MQTT, HTTP)</li>
+                    <li>Intégration Capteurs</li>
+                  </ul>
+                </div>
+                <div className="terminal-grid-item">
+                  <span className="cmd-bold" style={{ color: '#ef4444' }}>
+                    4. AUTRES
+                  </span>
+                  <ul
+                    style={{ paddingLeft: '16px', margin: '4px 0', color: 'var(--text-secondary)' }}
+                  >
+                    <li>Git / GitHub / Agile</li>
+                    <li>UI Design (Figma, Maquettes)</li>
+                    <li>Accessibilité (RGAA AA)</li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', marginTop: '10px' }}>
-              Défilez sur la page pour voir ces projets en détail dans la section "Mes Projets" !
-            </p>
-          </div>
-        );
-        break;
+          );
+          break;
 
-      case 'clear':
-        setHistory([]);
-        return;
+        case 'projects':
+          output = (
+            <div>
+              <p className="cmd-bold cmd-accent" style={{ marginBottom: '8px' }}>
+                Sélection de Projets :
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {projects.map((p, idx) => (
+                  <div
+                    key={p.id}
+                    style={{ borderLeft: '3px solid var(--accent-primary)', paddingLeft: '10px' }}
+                  >
+                    <p className="cmd-bold" style={{ color: 'var(--text-primary)' }}>
+                      {idx + 1}. {p.title}{' '}
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                        ({p.category})
+                      </span>
+                    </p>
+                    <p
+                      style={{
+                        color: 'var(--text-secondary)',
+                        fontSize: '0.8rem',
+                        margin: '2px 0',
+                      }}
+                    >
+                      {p.rhPath?.context.substring(0, 100)}...
+                    </p>
+                    <p style={{ fontSize: '0.75rem', color: 'var(--accent-secondary)' }}>
+                      Stack : {p.stack.join(', ')}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.75rem', marginTop: '10px' }}>
+                Défilez sur la page pour voir ces projets en détail dans la section "Mes Projets" !
+              </p>
+            </div>
+          );
+          break;
 
-      case 'matrix':
-        setMatrixActive(true);
-        output = 'Connexion établie avec la Matrice... Activation du flux numérique...';
-        break;
+        case 'clear':
+          setHistory([]);
+          return;
 
-      case 'cv':
-        output = (
-          <span style={{ color: 'var(--accent-secondary)' }}>
-            Téléchargement lancé ! Le CV s'ouvre dans un nouvel onglet...{' '}
-            <a
-              href="/CV_Maxence_Coste.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cmd-bold"
-              style={{ textDecoration: 'underline', color: 'var(--accent-primary)' }}
+        case 'matrix':
+          setMatrixActive(true);
+          output = 'Connexion établie avec la Matrice... Activation du flux numérique...';
+          break;
+
+        case 'cv':
+          output = (
+            <span style={{ color: 'var(--accent-secondary)' }}>
+              Téléchargement lancé ! Le CV s'ouvre dans un nouvel onglet...{' '}
+              <a
+                href="/CV_Maxence_Coste.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cmd-bold"
+                style={{ textDecoration: 'underline', color: 'var(--accent-primary)' }}
+              >
+                Cliquez ici si l'onglet ne s'ouvre pas automatiquement.
+              </a>
+            </span>
+          );
+          setTimeout(() => {
+            window.open('/CV_Maxence_Coste.pdf', '_blank');
+          }, 1000);
+          break;
+
+        case 'contact':
+          output = (
+            <div style={{ color: 'var(--text-secondary)' }}>
+              <p className="cmd-bold cmd-accent" style={{ marginBottom: '8px' }}>
+                Coordonnées de Maxence Coste :
+              </p>
+              <ul
+                style={{
+                  paddingLeft: '16px',
+                  margin: '4px 0',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px',
+                }}
+              >
+                <li>
+                  <span className="cmd-bold">Email :</span>{' '}
+                  <a
+                    href="mailto:maxence.coste@example.com"
+                    style={{ color: 'var(--accent-secondary)', textDecoration: 'underline' }}
+                  >
+                    maxence.coste@example.com
+                  </a>
+                </li>
+                <li>
+                  <span className="cmd-bold">Région :</span> Lyon / Rhône-Alpes (Disponible pour
+                  mobilité)
+                </li>
+                <li>
+                  <span className="cmd-bold">LinkedIn :</span>{' '}
+                  <span style={{ color: 'var(--text-muted)' }}>linkedin.com/in/maxence-coste</span>
+                </li>
+                <li>
+                  <span className="cmd-bold">GitHub :</span>{' '}
+                  <a
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ color: 'var(--accent-secondary)', textDecoration: 'underline' }}
+                  >
+                    github.com/maxence-coste
+                  </a>
+                </li>
+              </ul>
+              <p style={{ marginTop: '8px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
+                Vous pouvez également utiliser le formulaire de contact interactif au bas de cette
+                page !
+              </p>
+            </div>
+          );
+          break;
+
+        case 'secret':
+          output = (
+            <div
+              style={{
+                textAlign: 'center',
+                padding: '10px 0',
+                border: '1px dashed var(--accent-secondary)',
+                borderRadius: '8px',
+              }}
             >
-              Cliquez ici si l'onglet ne s'ouvre pas automatiquement.
-            </a>
-          </span>
-        );
-        setTimeout(() => {
-          window.open('/CV_Maxence_Coste.pdf', '_blank');
-        }, 1000);
-        break;
+              <p style={{ fontSize: '2rem', margin: '0' }}>🍪</p>
+              <p className="cmd-bold cmd-success" style={{ marginTop: '4px' }}>
+                EASTER EGG DEBLOQUÉ !
+              </p>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
+                Félicitations recruteur ! Voici un cookie virtuel pour récompenser votre curiosité.
+              </p>
+            </div>
+          );
+          break;
 
-      case 'contact':
-        output = (
-          <div style={{ color: 'var(--text-secondary)' }}>
-            <p className="cmd-bold cmd-accent" style={{ marginBottom: '8px' }}>
-              Coordonnées de Maxence Coste :
-            </p>
-            <ul style={{ paddingLeft: '16px', margin: '4px 0', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-              <li>
-                <span className="cmd-bold">Email :</span>{' '}
-                <a href="mailto:maxence.coste@example.com" style={{ color: 'var(--accent-secondary)', textDecoration: 'underline' }}>
-                  maxence.coste@example.com
-                </a>
-              </li>
-              <li>
-                <span className="cmd-bold">Région :</span> Lyon / Rhône-Alpes (Disponible pour mobilité)
-              </li>
-              <li>
-                <span className="cmd-bold">LinkedIn :</span>{' '}
-                <span style={{ color: 'var(--text-muted)' }}>linkedin.com/in/maxence-coste</span>
-              </li>
-              <li>
-                <span className="cmd-bold">GitHub :</span>{' '}
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-secondary)', textDecoration: 'underline' }}>
-                  github.com/maxence-coste
-                </a>
-              </li>
-            </ul>
-            <p style={{ marginTop: '8px', color: 'var(--text-muted)', fontSize: '0.8rem' }}>
-              Vous pouvez également utiliser le formulaire de contact interactif au bas de cette page !
-            </p>
-          </div>
-        );
-        break;
+        default:
+          output = (
+            <span className="cmd-error">
+              Command not found: <span style={{ fontWeight: 'bold' }}>{commandName}</span>. Taper{' '}
+              <span className="cmd-bold" style={{ color: 'var(--text-primary)' }}>
+                help
+              </span>{' '}
+              pour voir les commandes valides.
+            </span>
+          );
+      }
 
-      case 'secret':
-        output = (
-          <div style={{ textAlign: 'center', padding: '10px 0', border: '1px dashed var(--accent-secondary)', borderRadius: '8px' }}>
-            <p style={{ fontSize: '2rem', margin: '0' }}>🍪</p>
-            <p className="cmd-bold cmd-success" style={{ marginTop: '4px' }}>
-              EASTER EGG DEBLOQUÉ !
-            </p>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.8rem' }}>
-              Félicitations recruteur ! Voici un cookie virtuel pour récompenser votre curiosité.
-            </p>
-          </div>
-        );
-        break;
-
-      default:
-        output = (
-          <span className="cmd-error">
-            Command not found: <span style={{ fontWeight: 'bold' }}>{commandName}</span>. Taper <span className="cmd-bold" style={{ color: 'var(--text-primary)' }}>help</span> pour voir les commandes valides.
-          </span>
-        );
-    }
-
-    setHistory((prev) => [
-      ...prev,
-      { type: 'input', content: cmd, cmd: commandName },
-      { type: 'output', content: output, cmd: commandName },
-    ]);
-  }, [availableCommands]);
+      setHistory((prev) => [
+        ...prev,
+        { type: 'input', content: cmd, cmd: commandName },
+        { type: 'output', content: output, cmd: commandName },
+      ]);
+    },
+    [availableCommands]
+  );
 
   // Matrix Digital Rain effect simulation
   useEffect(() => {
@@ -344,7 +417,14 @@ export default function Terminal() {
           }
           setHistory((prev) => [
             ...prev,
-            { type: 'output', content: <span style={{ color: 'var(--accent-secondary)' }}>Connexion Matrix fermée. Retour au terminal.</span> },
+            {
+              type: 'output',
+              content: (
+                <span style={{ color: 'var(--accent-secondary)' }}>
+                  Connexion Matrix fermée. Retour au terminal.
+                </span>
+              ),
+            },
           ]);
         }
       };
@@ -421,7 +501,8 @@ export default function Terminal() {
     } else if (e.key === 'ArrowUp') {
       e.preventDefault();
       if (commandHistory.length === 0) return;
-      const nextIndex = historyIndex === -1 ? commandHistory.length - 1 : Math.max(0, historyIndex - 1);
+      const nextIndex =
+        historyIndex === -1 ? commandHistory.length - 1 : Math.max(0, historyIndex - 1);
       setHistoryIndex(nextIndex);
       setInputVal(commandHistory[nextIndex]);
     } else if (e.key === 'ArrowDown') {
@@ -456,7 +537,10 @@ export default function Terminal() {
             <span className="terminal-btn minimize" />
             <span className="terminal-btn maximize" />
           </div>
-          <span className="terminal-title" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <span
+            className="terminal-title"
+            style={{ display: 'flex', alignItems: 'center', gap: '6px' }}
+          >
             <TerminalIcon size={14} style={{ color: 'var(--accent-secondary)' }} />
             <span>guest@maxence-coste: ~</span>
           </span>
@@ -496,9 +580,7 @@ export default function Terminal() {
             ))}
 
           {/* Matrix rain animation screen */}
-          {matrixActive && matrixText && (
-            <div className="matrix-container">{matrixText}</div>
-          )}
+          {matrixActive && matrixText && <div className="matrix-container">{matrixText}</div>}
 
           {/* Live input prompt row */}
           {hasStarted && !matrixActive && (

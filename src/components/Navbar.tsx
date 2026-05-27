@@ -1,5 +1,17 @@
 import { useState, useEffect } from 'react';
-import { Home, User, Briefcase, Code, Mail, Sun, Moon, Menu, X, Cpu, Terminal as TerminalIcon } from 'lucide-react';
+import {
+  Home,
+  User,
+  Briefcase,
+  Code,
+  Mail,
+  Sun,
+  Moon,
+  Menu,
+  X,
+  Cpu,
+  Terminal as TerminalIcon,
+} from 'lucide-react';
 import './Navbar.css';
 
 interface NavItem {
