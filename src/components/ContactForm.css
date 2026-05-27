@@ -92,16 +92,16 @@
 /* Error State */
 .form-group.has-error input,
 .form-group.has-error textarea {
-  border-color: #ef4444 !important;
+  border-color: var(--error-color) !important;
 }
 
 .form-group.has-error input:focus,
 .form-group.has-error textarea:focus {
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.15) !important;
 }
 
 .form-group.has-error .label-icon {
-  color: #ef4444;
+  color: var(--error-color);
 }
 
 /* Valid State */
@@ -140,8 +140,8 @@
 }
 
 .feedback-invalid {
-  color: #ef4444;
-  filter: drop-shadow(0 0 4px rgba(239, 68, 68, 0.3));
+  color: var(--error-color);
+  filter: drop-shadow(0 0 4px rgba(248, 113, 113, 0.3));
 }
 
 @keyframes scaleInFeedback {
@@ -161,7 +161,7 @@
 .error-message {
   font-size: 0.82rem;
   font-weight: 500;
-  color: #ef4444;
+  color: var(--error-color);
   margin-top: 4px;
   display: flex;
   align-items: center;
@@ -331,10 +331,10 @@
 }
 
 .error-icon {
-  color: #ef4444;
+  color: var(--error-color);
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.4));
+  filter: drop-shadow(0 0 8px rgba(248, 113, 113, 0.4));
   animation: popIcon 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
 
@@ -342,7 +342,7 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 2px solid #ef4444;
+  border: 2px solid var(--error-color);
   opacity: 0.4;
   animation: errorPulse 2s infinite ease-out;
   pointer-events: none;
@@ -392,7 +392,7 @@
   border-radius: var(--radius-md);
   padding: 12px 16px;
   margin-bottom: var(--space-sm);
-  color: #f59e0b;
+  color: var(--warning-color);
   font-size: 0.88rem;
   line-height: 1.4;
   backdrop-filter: blur(8px);
@@ -402,7 +402,7 @@
 .demo-banner-icon {
   flex-shrink: 0;
   margin-top: 2px;
-  color: #f59e0b;
+  color: var(--warning-color);
   filter: drop-shadow(0 0 4px rgba(245, 158, 11, 0.2));
 }
 
@@ -424,7 +424,7 @@
 }
 
 .demo-banner-link {
-  color: #f59e0b;
+  color: var(--warning-color);
   text-decoration: underline;
   font-weight: 600;
   transition: opacity 0.2s ease;

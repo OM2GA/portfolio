@@ -29,10 +29,15 @@
   --accent-primary: #6366f1; /* Indigo */
   --accent-secondary: #10b981; /* Vert Menthe */
   --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-secondary: #cbd5e1; /* Ajusté de #9ca3af pour un meilleur contraste */
+  --text-muted: #94a3b8; /* Ajusté de #6b7280 pour un meilleur contraste */
   --border-color: rgba(255, 255, 255, 0.08);
   --glow-color: rgba(99, 102, 241, 0.15);
+
+  /* États colorés contrastés (A11y) */
+  --error-color: #f87171;
+  --warning-color: #fbbf24;
+  --success-color: #34d399;
 
   /* Mappages de compatibilité pour le template de démo existant */
   --bg: var(--bg-primary);
@@ -60,10 +65,15 @@
   --accent-primary: #4f46e5;
   --accent-secondary: #059669;
   --text-primary: #111827;
-  --text-secondary: #4b5563;
-  --text-muted: #9ca3af;
+  --text-secondary: #374151; /* Ajusté de #4b5563 pour un meilleur contraste */
+  --text-muted: #5e6a7e; /* Ajusté de #9ca3af pour un meilleur contraste (>4.5:1) */
   --border-color: rgba(0, 0, 0, 0.08);
   --glow-color: rgba(79, 70, 229, 0.08);
+
+  /* États colorés contrastés (A11y) */
+  --error-color: #b91c1c;
+  --warning-color: #b45309;
+  --success-color: #047857;
 
   --shadow: rgba(0, 0, 0, 0.05) 0 10px 15px -3px, rgba(0, 0, 0, 0.03) 0 4px 6px -2px;
 }
@@ -78,10 +88,15 @@
     --accent-primary: #4f46e5;
     --accent-secondary: #059669;
     --text-primary: #111827;
-    --text-secondary: #4b5563;
-    --text-muted: #9ca3af;
+    --text-secondary: #374151; /* Ajusté pour le thème clair par défaut */
+    --text-muted: #5e6a7e; /* Ajusté pour le thème clair par défaut */
     --border-color: rgba(0, 0, 0, 0.08);
     --glow-color: rgba(79, 70, 229, 0.08);
+
+    /* États colorés contrastés (A11y) */
+    --error-color: #b91c1c;
+    --warning-color: #b45309;
+    --success-color: #047857;
 
     --shadow: rgba(0, 0, 0, 0.05) 0 10px 15px -3px, rgba(0, 0, 0, 0.03) 0 4px 6px -2px;
   }
