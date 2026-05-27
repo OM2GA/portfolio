@@ -9,8 +9,8 @@
     "techCategory": "Front-End",
     "demoUrl": "http://20bornes.chez.com/",
     "images": {
-      "mockup": "/assets/images/mockup_pc_mobile.png",
-      "thumbnail": "/assets/images/accueil_20bornes.png"
+      "mockup": "/assets/images/mockup_pc_mobile.webp",
+      "thumbnail": "/assets/images/accueil_20bornes.webp"
     },
     "rhPath": {
       "context": "L'événement annuel des '20 Bornes d'Andrésy' est une course populaire majeure. Cependant, son portail historique était vieillissant, illisible sur mobile (non responsive), et présentait des lenteurs de chargement. Cette vitrine obsolète pénalisait les inscriptions et l'image moderne de la ville.",
@@ -46,8 +46,8 @@
     "status": "Prototype fonctionnel",
     "techCategory": "Back-End",
     "images": {
-      "mockup": "/assets/images/maquette_oishi.png",
-      "thumbnail": "/assets/images/connexion_oishi.png"
+      "mockup": "/assets/images/maquette_oishi.webp",
+      "thumbnail": "/assets/images/connexion_oishi.webp"
     },
     "rhPath": {
       "context": "Dans le cadre de notre formation BUT MMI, nous devions simuler la création complète d'une plateforme de commerce électronique pour un restaurant de sushis fictif ('Oishi'). La problématique était de concevoir un parcours utilisateur fluide, de la consultation du catalogue à la validation du panier, dans un cadre de développement en équipe.",
@@ -83,8 +83,8 @@
     "status": "Livré à temps et fonctionnel",
     "techCategory": "Front-End",
     "images": {
-      "mockup": "/assets/images/decathlon_accueil.png",
-      "thumbnail": "/assets/images/decathlon_questionnaire.png"
+      "mockup": "/assets/images/decathlon_accueil.webp",
+      "thumbnail": "/assets/images/decathlon_questionnaire.webp"
     },
     "rhPath": {
       "context": "Lors de la Nuit de l'Info (défi de codage national de 15h non-stop), notre équipe a choisi de relever le défi de connecter l'informatique au sport pour prévenir les blessures. La contrainte ? Concevoir, designer, rédiger et développer un prototype interactif de profilage postural sportif en moins de 2 heures !",
@@ -121,8 +121,8 @@
     "techCategory": "Dispositifs Interactifs",
     "demoUrl": "https://webdoc-gymnastique.alwaysdata.net/",
     "images": {
-      "mockup": "/assets/images/webdoc_accueil.png",
-      "thumbnail": "/assets/images/webdoc_accueil.png"
+      "mockup": "/assets/images/webdoc_accueil.webp",
+      "thumbnail": "/assets/images/webdoc_accueil.webp"
     },
     "rhPath": {
       "context": "Ce projet tuteuré visait à documenter la vie sportive et associative d'un club de gymnastique (Courtry) préparant les championnats de France. L'enjeu était de proposer un web-documentaire immersif et interactif capable d'intégrer harmonieusement des formats très variés : vidéos d'entraînements, galeries photo de haute qualité, podcasts audio et articles journalistiques.",

@@ -144,7 +144,7 @@ function App() {
                   <div className="about-profile-card liquid-glass">
                     <div className="profile-image-container">
                       <img
-                        src="/assets/images/pp_maxence.jpg"
+                        src="/assets/images/pp_maxence.webp"
                         alt="Portrait professionnel de Maxence Coste"
                         className="profile-image"
                         loading="lazy"

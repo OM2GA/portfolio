@@ -276,12 +276,12 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
 
 _Amélioration de la qualité technique du code pour garantir performance et accessibilité à tous les utilisateurs._
 
-- [ ] **[PERF-01] Optimisation des images et des médias**
+- [x] **[PERF-01] Optimisation des images et des médias**
   - **Description** : Compresser l'intégralité des images et utiliser des formats modernes pour maximiser la vitesse de chargement du portfolio.
   - **Critères d'acceptation** :
-    - [ ] Toutes les images converties au format `.webp` ou `.avif`.
-    - [ ] Tailles d'images adaptées (redimensionnées) pour éviter de charger des fichiers trop lourds.
-    - [ ] Attribut `loading="lazy"` ajouté sur les images sous la ligne de flottaison.
+    - [x] Toutes les images converties au format `.webp` ou `.avif`.
+    - [x] Tailles d'images adaptées (redimensionnées) pour éviter de charger des fichiers trop lourds.
+    - [x] Attribut `loading="lazy"` ajouté sur les images sous la ligne de flottaison.
 
 - [ ] **[PERF-02] Optimisation des polices de caractères**
   - **Description** : Configurer les polices pour éliminer le blocage du rendu visuel au démarrage.
