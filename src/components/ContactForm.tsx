@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { AlertCircle, CheckCircle, Send, Sparkles, Mail, User, MessageSquare } from 'lucide-react';
+import { AlertCircle, CheckCircle, Send, Sparkles, Mail, User, MessageSquare, Info } from 'lucide-react';
 import Button from './Button';
 import './ContactForm.css';
 
@@ -18,6 +18,11 @@ export default function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Check if API key is set. In Vite, environment variables must start with VITE_
+  const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+  const isDemoMode = !accessKey || accessKey.trim() === '' || accessKey.trim() === 'your_access_key_here';
 
   // Form validation rules (computed on the fly)
   const errors = {
@@ -65,7 +70,7 @@ export default function ContactForm() {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     // Mark all fields as touched to trigger any missing validation messages
@@ -80,18 +85,55 @@ export default function ContactForm() {
     }
 
     setIsSubmitting(true);
+    setSubmitError(null);
 
-    // Mock API call to simulate network request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
-      setTouched({ name: false, email: false, message: false });
-    }, 1500);
+    if (isDemoMode) {
+      // Mock API call in demo mode
+      setTimeout(() => {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', message: '' });
+        setTouched({ name: false, email: false, message: false });
+      }, 1500);
+    } else {
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify({
+            access_key: accessKey,
+            name: formData.name,
+            email: formData.email,
+            message: formData.message,
+            subject: `Nouveau message de ${formData.name} via Portfolio MMI`,
+            from_name: 'Portfolio Contact Form',
+          }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok && result.success) {
+          setIsSubmitting(false);
+          setIsSubmitted(true);
+          setFormData({ name: '', email: '', message: '' });
+          setTouched({ name: false, email: false, message: false });
+        } else {
+          throw new Error(result.message || "Une erreur est survenue lors de l'envoi de votre message.");
+        }
+      } catch (err: unknown) {
+        setIsSubmitting(false);
+        const errorMessage = err instanceof Error ? err.message : "Une erreur réseau est survenue. Veuillez vérifier votre connexion et réessayer.";
+        setSubmitError(errorMessage);
+      }
+    }
   };
 
   const handleReset = () => {
     setIsSubmitted(false);
+    setSubmitError(null);
   };
 
   if (isSubmitted) {
@@ -113,8 +155,37 @@ export default function ContactForm() {
     );
   }
 
+  if (submitError) {
+    return (
+      <div className="contact-error-card liquid-glass" role="alert" aria-live="polite">
+        <div className="error-icon-container">
+          <div className="error-pulse-ring" />
+          <AlertCircle size={48} className="error-icon" />
+        </div>
+        <h3 className="error-title">Erreur d'envoi !</h3>
+        <p className="error-description">
+          {submitError}
+        </p>
+        <Button variant="secondary" onClick={handleReset} leftIcon={<AlertCircle size={18} />}>
+          Réessayer
+        </Button>
+      </div>
+    );
+  }
+
   return (
     <div className="contact-form-card liquid-glass">
+      {isDemoMode && (
+        <div className="demo-warning-banner">
+          <Info size={18} className="demo-banner-icon" />
+          <div className="demo-banner-content">
+            <h4 className="demo-banner-title">Mode Démo Actif</h4>
+            <p className="demo-banner-text">
+              L'envoi est simulé. Pour recevoir de vrais e-mails, configurez votre clé Web3Forms gratuite dans le fichier <code>.env</code>.
+            </p>
+          </div>
+        </div>
+      )}
       <form onSubmit={handleSubmit} noValidate className="contact-interactive-form">
         {/* FIELD: NAME */}
         <div

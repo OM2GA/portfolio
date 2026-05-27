@@ -258,11 +258,11 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
     - [x] Terminal fonctionnel réagissant à des commandes simples (`help`, `about`, `skills`, `projects`, `clear`).
     - [x] Effet d'écriture rétro et style Monospace parfait.
 
-- [ ] **[INT-07] Intégration de l'API de messagerie du formulaire**
+- [x] **[INT-07] Intégration de l'API de messagerie du formulaire**
   - **Description** : Connecter ton formulaire de contact à un service d'envoi d'e-mails pour recevoir directement les messages dans ta boîte de réception.
   - **Critères d'acceptation** :
-    - [ ] Liaison réussie avec un service gratuit (ex: EmailJS, Formspree ou via une Serverless API route).
-    - [ ] Message de succès et d'erreur propre affiché à l'utilisateur après soumission.
+    - [x] Liaison réussie avec un service gratuit (ex: EmailJS, Formspree ou via une Serverless API route).
+    - [x] Message de succès et d'erreur propre affiché à l'utilisateur après soumission.
 
 - [ ] **[INT-08] Téléchargement dynamique du CV**
   - **Description** : Mettre en ligne ton CV au format PDF et assurer son téléchargement ou son ouverture propre.
