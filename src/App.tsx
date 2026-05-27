@@ -8,6 +8,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Typewriter from './components/Typewriter';
 import Timeline from './components/Timeline';
 import Skills from './components/Skills';
+import ContactForm from './components/ContactForm';
 import { projects } from './data/projects';
 import './App.css';
 
@@ -295,25 +296,7 @@ function App() {
                   </li>
                 </ul>
               </div>
-              <div className="contact-form-mock">
-                <form onSubmit={(e) => e.preventDefault()}>
-                  <div className="form-group">
-                    <label htmlFor="name">Nom</label>
-                    <input type="text" id="name" placeholder="Votre nom" disabled />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" placeholder="Votre email" disabled />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea id="message" rows={4} placeholder="Votre message..." disabled />
-                  </div>
-                  <Button type="submit" variant="primary" disabled>
-                    Envoyer (Prochainement disponible)
-                  </Button>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </div>
         </section>

@@ -207,11 +207,11 @@ _Développement des blocs de contenus indispensables qui composent la page princ
     - [x] Icônes officielles ou logos propres pour chaque technologie.
     - [x] Mise en page claire (grille de compétences interactives ou badges stylisés).
 
-- [ ] **[VIEW-08] Section Contact : Formulaire interactif**
+- [x] **[VIEW-08] Section Contact : Formulaire interactif**
   - **Description** : Créer un formulaire de contact professionnel permettant aux recruteurs de t'envoyer un message directement depuis le site.
   - **Critères d'acceptation** :
-    - [ ] Champs obligatoires validés en temps réel (Nom, Email, Message) avec des messages d'erreur explicites.
-    - [ ] Style des champs cohérent avec le design global du site.
+    - [x] Champs obligatoires validés en temps réel (Nom, Email, Message) avec des messages d'erreur explicites.
+    - [x] Style des champs cohérent avec le design global du site.
 
 - [ ] **[VIEW-09] Page de Détail Projet (Template dynamique ou modale)**
   - **Description** : Créer une page ou un panneau coulissant pour détailler un projet spécifique (très valorisant pour expliquer ton rôle dans les SAÉ de BUT MMI).
