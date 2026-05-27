@@ -6,6 +6,7 @@ import ProjectCard from './components/ProjectCard';
 import TechBadge from './components/TechBadge';
 import ScrollToTop from './components/ScrollToTop';
 import Typewriter from './components/Typewriter';
+import Timeline from './components/Timeline';
 import { projects } from './data/projects';
 import './App.css';
 
@@ -98,45 +99,95 @@ function App() {
         <section id="about" className="section-about">
           <div className="section-container">
             <h2 className="section-title">À Propos</h2>
+
             <div className="about-grid">
-              <div className="about-text">
-                <p>
-                  Bienvenue ! Je m'appelle <strong>Maxence Coste</strong>, étudiant en BUT MMI
-                  spécialisé en développement web et objets connectés. J'adore créer des interfaces
-                  qui sortent de l'écran, mêlant programmation pure et interactivité avec le monde
-                  réel.
-                </p>
-                <p>
-                  Ce site montre mes travaux, de la modélisation à l'intégration, avec le souci
-                  permanent de la qualité de code, de la performance et de l'accessibilité
-                  (RGAA/WCAG).
-                </p>
-              </div>
-              <div className="timeline-mock">
-                <h3>Mon Parcours</h3>
-                <div className="timeline-item">
-                  <div className="timeline-marker" />
-                  <div className="timeline-content">
-                    <span className="timeline-date">2024 - Présent</span>
-                    <h4>BUT MMI (Web Dev & IoT)</h4>
-                    <p>
-                      Développement fullstack, architectures d'API, WebSocket, communication
-                      matérielle.
-                    </p>
+              {/* Colonne Gauche : Visuel & Savoir-être */}
+              <div className="about-visual-col">
+                <div className="about-profile-card liquid-glass">
+                  <div className="profile-image-container">
+                    <img
+                      src="/assets/images/pp_maxence.jpg"
+                      alt="Portrait professionnel de Maxence Coste"
+                      className="profile-image"
+                      loading="lazy"
+                    />
+                    <div className="profile-image-glow" />
                   </div>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-marker" />
-                  <div className="timeline-content">
-                    <span className="timeline-date">2022 - 2024</span>
-                    <h4>Baccalauréat STI2D</h4>
-                    <p>
-                      Fondations des systèmes d'information, électronique numérique, initiation au
-                      codage.
-                    </p>
+
+                  <div className="about-soft-skills">
+                    <h3 className="soft-skills-title">Savoir-être (Soft Skills)</h3>
+                    <div className="soft-skills-tags">
+                      <span className="soft-skill-tag">
+                        <span className="soft-skill-dot dot-indigo" />
+                        Autonomie
+                      </span>
+                      <span className="soft-skill-tag">
+                        <span className="soft-skill-dot dot-green" />
+                        Esprit d'équipe
+                      </span>
+                      <span className="soft-skill-tag">
+                        <span className="soft-skill-dot dot-yellow" />
+                        Curiosité
+                      </span>
+                      <span className="soft-skill-tag">
+                        <span className="soft-skill-dot dot-red" />
+                        Vulgarisation
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              {/* Colonne Droite : Bio Professionnelle & Forces */}
+              <div className="about-text-col">
+                <div className="bio-card liquid-glass">
+                  <h3 className="bio-title">Qui suis-je ?</h3>
+                  <p>
+                    Passionné par la synergie entre le monde physique et le monde numérique, je suis
+                    étudiant en <strong>BUT MMI (Métiers du Multimédia et de l'Internet)</strong>,
+                    spécialisé dans le{' '}
+                    <strong>Développement Web et les Dispositifs Interactifs</strong>.
+                  </p>
+                  <p>
+                    Mon parcours me permet d'allier la <strong>rigueur technique du code</strong> à
+                    la <strong>sensibilité esthétique du design d'interface</strong>. J'adore
+                    concevoir des applications web fluides, performantes et accessibles (conformes
+                    aux directives RGAA/WCAG), mais aussi donner vie à des dispositifs interactifs
+                    connectés en programmant des microcontrôleurs (Arduino, ESP32) communicant en
+                    temps réel via WebSockets ou MQTT.
+                  </p>
+                  <p>
+                    Actuellement à la recherche d'une{' '}
+                    <strong>alternance d'un an pour ma 3ème année de BUT MMI</strong> à partir de
+                    septembre 2026, je souhaite mettre ma polyvalence, ma proactivité et mon sens du
+                    détail au service de projets ambitieux de bout en bout.
+                  </p>
+
+                  <div className="about-strengths">
+                    <h4 className="strengths-title">Mes Forces :</h4>
+                    <ul className="strengths-list">
+                      <li>
+                        <strong>Développement Front-End Moderne :</strong> Intégration pixel-perfect
+                        avec React, TypeScript et transitions fluides (cubic-bezier).
+                      </li>
+                      <li>
+                        <strong>Intégration d'Objets Connectés :</strong> Liaison de capteurs
+                        physiques à des dashboards web temps réel (WebSockets, API).
+                      </li>
+                      <li>
+                        <strong>Accessibilité & Performance :</strong> Code sémantique, optimisation
+                        SEO et respect des normes d'accessibilité AA.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* SECTION TIMELINE (Mon Parcours - VIEW-04) */}
+            <div className="about-timeline-section">
+              <h3 className="timeline-section-title">Mon Parcours</h3>
+              <Timeline />
             </div>
           </div>
         </section>

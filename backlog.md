@@ -179,16 +179,16 @@ _Développement des blocs de contenus indispensables qui composent la page princ
   - **Critères d'acceptation** :
     - [x] Effet d'écriture fluide et sans bug de mise en page (pas de décalage de conteneur).
 
-- [ ] **[VIEW-03] Section À Propos (About) : Présentation et Profil**
+- [x] **[VIEW-03] Section À Propos (About) : Présentation et Profil**
   - **Description** : Rédiger une biographie concise expliquant ton profil BUT MMI (polyvalence design/technique) et ton projet professionnel.
   - **Critères d'acceptation** :
-    - [ ] Contenu textuel rédigé sans fautes d'orthographe.
-    - [ ] Photo de profil optimisée ou illustration stylisée intégrée harmonieusement.
+    - [x] Contenu textuel rédigé sans fautes d'orthographe.
+    - [x] Photo de profil optimisée ou illustration stylisée intégrée harmonieusement.
 
-- [ ] **[VIEW-04] Section À Propos : Timeline interactive du parcours**
+- [x] **[VIEW-04] Section À Propos : Timeline interactive du parcours**
   - **Description** : Créer une frise chronologique animée présentant tes étapes clés (Bac, BUT MMI, projets marquants, stages/jobs).
   - **Critères d'acceptation** :
-    - [ ] Composant interactif permettant de cliquer sur les étapes pour afficher des détails textuels ou visuels supplémentaires.
+    - [x] Composant interactif permettant de cliquer sur les étapes pour afficher des détails textuels ou visuels supplémentaires.
 
 - [ ] **[VIEW-05] Section Projets : Liste & Grille interactive**
   - **Description** : Afficher la grille de cartes de projets en important les données structurées de ton fichier JSON/Markdown.
