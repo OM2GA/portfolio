@@ -13,6 +13,7 @@ import Skills from './components/Skills';
 import ContactForm from './components/ContactForm';
 import { projects } from './data/projects';
 import type { Project } from './types/project';
+import IotFocus from './components/IotFocus';
 import { LazyMotion, domAnimation } from 'framer-motion';
 import ScrollReveal from './components/ScrollReveal';
 import './App.css';
@@ -277,6 +278,18 @@ function App() {
                     />
                   ))}
                 </div>
+              </ScrollReveal>
+            </div>
+          </section>
+
+          {/* SECTION IOT FOCUS */}
+          <section id="iot" className="section-iot-focus">
+            <div className="section-container">
+              <ScrollReveal direction="up">
+                <h2 className="section-title">Focus : Dispositifs Interactifs & IoT</h2>
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={0.2}>
+                <IotFocus />
               </ScrollReveal>
             </div>
           </section>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Home, User, Briefcase, Code, Mail, Sun, Moon, Menu, X } from 'lucide-react';
+import { Home, User, Briefcase, Code, Mail, Sun, Moon, Menu, X, Cpu } from 'lucide-react';
 import './Navbar.css';
 
 interface NavItem {
@@ -23,6 +23,11 @@ const navItems: NavItem[] = [
     id: 'projects',
     label: 'Projets',
     icon: <Briefcase size={18} />,
+  },
+  {
+    id: 'iot',
+    label: 'Lab IoT',
+    icon: <Cpu size={18} />,
   },
   {
     id: 'skills',

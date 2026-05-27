@@ -247,10 +247,10 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
     - [x] Curseur fluide (sans latence perçue) qui change de style (grossissement, flou, ou inversion de couleur) au survol des liens et boutons.
     - [x] Repli automatique (fallback) vers le curseur système par défaut sur tablette et mobile.
 
-- [ ] **[INT-05] Focus spécial "Dispositifs Interactifs / IoT"**
+- [x] **[INT-05] Focus spécial "Dispositifs Interactifs / IoT"**
   - **Description** : Créer un composant graphique interactif (ex: un schéma interactif animé ou un simulateur en SVG/CSS) expliquant visuellement comment tu as connecté un capteur physique à une API web dans l'un de tes projets.
   - **Critères d'acceptation** :
-    - [ ] Schéma explicatif animé interactif au clic ou au survol montrant la circulation des flux de données (ex: Capteur -> Arduino -> WebSockets -> Dashboard).
+    - [x] Schéma explicatif animé interactif au clic ou au survol montrant la circulation des flux de données (ex: Capteur -> Arduino -> WebSockets -> Dashboard).
 
 - [ ] **[INT-06] Mini Terminal de commande interactif (Easter Egg pour recruteurs)**
   - **Description** : Intégrer un mini-terminal rétro interactif (type CLI) où les recruteurs techniques peuvent s'amuser à taper des commandes de base.
