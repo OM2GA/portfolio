@@ -289,11 +289,11 @@ _Amélioration de la qualité technique du code pour garantir performance et acc
     - [x] Utilisation de la propriété CSS `font-display: swap` pour afficher une police de secours en attendant le chargement de la police principale.
     - [x] Pré-connexion aux serveurs de polices (`preconnect`) ou polices hébergées localement.
 
-- [ ] **[SEO-01] Balises Meta de base et Open Graph**
+- [x] **[SEO-01] Balises Meta de base et Open Graph**
   - **Description** : Optimiser le référencement naturel (SEO) du site pour apparaître dans les recherches avec des résumés accrocheurs.
   - **Critères d'acceptation** :
-    - [ ] Balises `<title>` et `<meta name="description">` personnalisées et percutantes.
-    - [ ] Intégration des balises Open Graph (`og:title`, `og:description`, `og:image`) pour un affichage parfait lors des partages sur LinkedIn et Twitter.
+    - [x] Balises `<title>` et `<meta name="description">` personnalisées et percutantes.
+    - [x] Intégration des balises Open Graph (`og:title`, `og:description`, `og:image`) pour un affichage parfait lors des partages sur LinkedIn et Twitter.
 
 - [ ] **[SEO-02] Sitemap XML et Robots.txt**
   - **Description** : Fournir les fichiers nécessaires pour guider les robots de recherche (Google, Bing) lors de l'indexation de ton site.
