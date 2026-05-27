@@ -72,11 +72,58 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   const [activeImage, setActiveImage] = useState(galleryImages[0] || images.thumbnail);
   const [copied, setCopied] = useState(false);
   const overlayRef = useRef<HTMLDivElement>(null);
+  const modalWrapperRef = useRef<HTMLDivElement>(null);
 
-  // Close on escape key and lock background scrolling
+  // Keyboard focus trap and close handlers
   useEffect(() => {
+    // Put initial focus on the close button to trap keyboard flow instantly
+    if (modalWrapperRef.current) {
+      const focusable = modalWrapperRef.current.querySelectorAll<HTMLElement>(
+        'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
+      );
+      if (focusable.length > 0) {
+        focusable[0].focus();
+      }
+    }
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
+      if (e.key === 'Escape') {
+        onClose();
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        if (!modalWrapperRef.current) return;
+
+        const focusable = Array.from(
+          modalWrapperRef.current.querySelectorAll<HTMLElement>(
+            'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]'
+          )
+        ).filter(
+          (el) =>
+            el.tabIndex !== -1 &&
+            el.getAttribute('aria-hidden') !== 'true' &&
+            el.style.display !== 'none' &&
+            el.style.visibility !== 'hidden'
+        );
+
+        if (focusable.length === 0) return;
+
+        const firstElement = focusable[0];
+        const lastElement = focusable[focusable.length - 1];
+
+        if (e.shiftKey) {
+          if (document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          }
+        } else {
+          if (document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      }
     };
 
     const originalOverflow = document.body.style.overflow;
@@ -148,7 +195,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       aria-modal="true"
       aria-labelledby="project-modal-title"
     >
-      <div className="project-modal-wrapper liquid-glass">
+      <div className="project-modal-wrapper liquid-glass" ref={modalWrapperRef}>
         {/* Close Button */}
         <button className="project-modal-close-btn" onClick={onClose} aria-label="Fermer la modale">
           <X size={20} />

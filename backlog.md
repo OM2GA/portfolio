@@ -308,11 +308,11 @@ _Amélioration de la qualité technique du code pour garantir performance et acc
     - [x] Rapport de contraste de couleurs conforme aux normes d'accessibilité (minimum AA) vérifié dans la console de développement.
     - [x] Attribut `alt` renseigné pour chaque image informative.
 
-- [ ] **[A11Y-02] Accessibilité au clavier et indicateurs de focus**
+- [x] **[A11Y-02] Accessibilité au clavier et indicateurs de focus**
   - **Description** : S'assurer que le site est entièrement navigable pour les personnes n'utilisant pas de souris.
   - **Critères d'acceptation** :
-    - [ ] Possibilité de naviguer logiquement sur tout le site avec la touche `Tab`.
-    - [ ] Styles `:focus-visible` bien visibles et élégants pour tous les éléments interactifs.
+    - [x] Possibilité de naviguer logiquement sur tout le site avec la touche `Tab`.
+    - [x] Styles `:focus-visible` bien visibles et élégants pour tous les éléments interactifs.
 
 ---
 

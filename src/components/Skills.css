@@ -251,6 +251,15 @@
   outline: none;
 }
 
+.interactive-skill-badge:focus-visible {
+  outline: none;
+}
+
+.interactive-skill-badge:focus-visible .tech-badge {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
 .interactive-skill-badge.is-selected {
   border-color: var(--tech-color);
   background-color: rgba(var(--tech-color-rgb), 0.15);
