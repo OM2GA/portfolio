@@ -283,11 +283,11 @@ _Amélioration de la qualité technique du code pour garantir performance et acc
     - [x] Tailles d'images adaptées (redimensionnées) pour éviter de charger des fichiers trop lourds.
     - [x] Attribut `loading="lazy"` ajouté sur les images sous la ligne de flottaison.
 
-- [ ] **[PERF-02] Optimisation des polices de caractères**
+- [x] **[PERF-02] Optimisation des polices de caractères**
   - **Description** : Configurer les polices pour éliminer le blocage du rendu visuel au démarrage.
   - **Critères d'acceptation** :
-    - [ ] Utilisation de la propriété CSS `font-display: swap` pour afficher une police de secours en attendant le chargement de la police principale.
-    - [ ] Pré-connexion aux serveurs de polices (`preconnect`) ou polices hébergées localement.
+    - [x] Utilisation de la propriété CSS `font-display: swap` pour afficher une police de secours en attendant le chargement de la police principale.
+    - [x] Pré-connexion aux serveurs de polices (`preconnect`) ou polices hébergées localement.
 
 - [ ] **[SEO-01] Balises Meta de base et Open Graph**
   - **Description** : Optimiser le référencement naturel (SEO) du site pour apparaître dans les recherches avec des résumés accrocheurs.
