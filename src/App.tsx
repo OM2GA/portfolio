@@ -13,6 +13,7 @@ import ContactForm from './components/ContactForm';
 import { projects } from './data/projects';
 import type { Project } from './types/project';
 import { LazyMotion, domAnimation } from 'framer-motion';
+import ScrollReveal from './components/ScrollReveal';
 import './App.css';
 
 function App() {
@@ -51,7 +52,7 @@ function App() {
           <section id="hero" className="section-hero">
             <div className="section-container">
               <div className="hero-grid">
-                <div className="hero-text-col">
+                <ScrollReveal direction="left" delay={0.15} className="hero-text-col">
                   <div className="status-badge">
                     <span className="status-pulse" />
                     <span>Disponible Alternance BUT3 - Sept. 26</span>
@@ -92,8 +93,8 @@ function App() {
                       Télécharger mon CV
                     </Button>
                   </div>
-                </div>
-                <div className="hero-visual-col">
+                </ScrollReveal>
+                <ScrollReveal direction="right" delay={0.3} className="hero-visual-col">
                   <div className="creative-card">
                     <div className="creative-card-glow" />
                     <div className="creative-card-inner">
@@ -121,7 +122,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               </div>
             </div>
           </section>
@@ -129,11 +130,13 @@ function App() {
           {/* SECTION ABOUT */}
           <section id="about" className="section-about">
             <div className="section-container">
-              <h2 className="section-title">À Propos</h2>
+              <ScrollReveal direction="up">
+                <h2 className="section-title">À Propos</h2>
+              </ScrollReveal>
 
               <div className="about-grid">
                 {/* Colonne Gauche : Visuel & Savoir-être */}
-                <div className="about-visual-col">
+                <ScrollReveal direction="left" delay={0.2} className="about-visual-col">
                   <div className="about-profile-card liquid-glass">
                     <div className="profile-image-container">
                       <img
@@ -167,10 +170,10 @@ function App() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
 
                 {/* Colonne Droite : Bio Professionnelle & Forces */}
-                <div className="about-text-col">
+                <ScrollReveal direction="right" delay={0.4} className="about-text-col">
                   <div className="bio-card liquid-glass">
                     <h3 className="bio-title">Qui suis-je ?</h3>
                     <p>
@@ -213,27 +216,29 @@ function App() {
                       </ul>
                     </div>
                   </div>
-                </div>
+                </ScrollReveal>
               </div>
 
               {/* SECTION TIMELINE (Mon Parcours - VIEW-04) */}
-              <div className="about-timeline-section">
+              <ScrollReveal direction="up" delay={0.2} className="about-timeline-section">
                 <h3 className="timeline-section-title">Mon Parcours</h3>
                 <Timeline />
-              </div>
+              </ScrollReveal>
             </div>
           </section>
 
           {/* SECTION PROJECTS */}
           <section id="projects" className="section-projects">
             <div className="section-container">
-              <h2 className="section-title">Mes Projets</h2>
-              <p className="section-subtitle">
-                Découvrez une sélection de mes réalisations académiques (SAÉ) et personnelles.
-              </p>
+              <ScrollReveal direction="up">
+                <h2 className="section-title">Mes Projets</h2>
+                <p className="section-subtitle">
+                  Découvrez une sélection de mes réalisations académiques (SAÉ) et personnelles.
+                </p>
+              </ScrollReveal>
 
               {/* Filtres de Projets */}
-              <div className="projects-filter-container">
+              <ScrollReveal direction="up" delay={0.15} className="projects-filter-container">
                 <div
                   className="projects-filters liquid-glass"
                   role="tablist"
@@ -254,38 +259,46 @@ function App() {
                     );
                   })}
                 </div>
-              </div>
+              </ScrollReveal>
 
-              <div
-                className={`projects-grid ${isTransitioning ? 'is-transitioning' : ''}`}
-                key={activeFilter}
-              >
-                {visibleProjects.map((project, index) => (
-                  <ProjectCard
-                    key={project.id}
-                    project={project}
-                    onOpenDetails={(p) => setSelectedProject(p)}
-                    style={{ '--index': index } as React.CSSProperties}
-                  />
-                ))}
-              </div>
+              <ScrollReveal direction="up" delay={0.3}>
+                <div
+                  className={`projects-grid ${isTransitioning ? 'is-transitioning' : ''}`}
+                  key={activeFilter}
+                >
+                  {visibleProjects.map((project, index) => (
+                    <ProjectCard
+                      key={project.id}
+                      project={project}
+                      onOpenDetails={(p) => setSelectedProject(p)}
+                      style={{ '--index': index } as React.CSSProperties}
+                    />
+                  ))}
+                </div>
+              </ScrollReveal>
             </div>
           </section>
 
           {/* SECTION SKILLS */}
           <section id="skills" className="section-skills">
             <div className="section-container">
-              <h2 className="section-title">Compétences</h2>
-              <Skills />
+              <ScrollReveal direction="up">
+                <h2 className="section-title">Compétences</h2>
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={0.2}>
+                <Skills />
+              </ScrollReveal>
             </div>
           </section>
 
           {/* SECTION CONTACT */}
           <section id="contact" className="section-contact">
             <div className="section-container">
-              <h2 className="section-title">Contact</h2>
+              <ScrollReveal direction="up">
+                <h2 className="section-title">Contact</h2>
+              </ScrollReveal>
               <div className="contact-grid">
-                <div className="contact-info-panel">
+                <ScrollReveal direction="left" delay={0.2} className="contact-info-panel">
                   <h3>Discutons de votre projet !</h3>
                   <p>
                     Vous êtes à la recherche d'un alternant passionné et rigoureux pour la rentrée
@@ -302,8 +315,10 @@ function App() {
                       <strong>Rythme :</strong> Disponible en alternance
                     </li>
                   </ul>
-                </div>
-                <ContactForm />
+                </ScrollReveal>
+                <ScrollReveal direction="right" delay={0.4}>
+                  <ContactForm />
+                </ScrollReveal>
               </div>
             </div>
           </section>

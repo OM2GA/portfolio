@@ -230,16 +230,16 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
   - **Critères d'acceptation** :
     - [x] Librairie initialisée sans impact négatif sur les performances de chargement initial.
 
-- [ ] **[INT-02] Animations de défilement (Scroll-Triggered Transitions)**
+- [x] **[INT-02] Animations de défilement (Scroll-Triggered Transitions)**
   - **Description** : Faire apparaître en fondu et décalage subtil les différentes sections et composants au fil de la navigation de l'utilisateur.
   - **Critères d'acceptation** :
-    - [ ] Les éléments apparaissent de manière fluide dès qu'ils entrent dans le viewport (fenêtre d'affichage).
+    - [x] Les éléments apparaissent de manière fluide dès qu'ils entrent dans le viewport (fenêtre d'affichage).
 
-- [ ] **[INT-03] Effet d'inclinaison 3D sur les cartes de projets (Tilt Effect)**
+- [x] **[INT-03] Effet d'inclinaison 3D sur les cartes de projets (Tilt Effect)**
   - **Description** : Ajouter un effet de parallaxe ou d'inclinaison 3D subtil sur les cartes de projets au survol de la souris.
   - **Critères d'acceptation** :
-    - [ ] La carte s'incline légèrement en suivant les mouvements du curseur.
-    - [ ] Désactivation automatique de l'effet sur les écrans tactiles pour éviter les conflits d'interaction.
+    - [x] La carte s'incline légèrement en suivant les mouvements du curseur.
+    - [x] Désactivation automatique de l'effet sur les écrans tactiles pour éviter les conflits d'interaction.
 
 - [ ] **[INT-04] Curseur personnalisé interactif (Custom Cursor)**
   - **Description** : Créer un curseur personnalisé réagissant au survol des éléments interactifs pour montrer ta maîtrise du développement créatif.

@@ -2,6 +2,7 @@ import { ExternalLink, Code, Users, Info } from 'lucide-react';
 import type { Project } from '../types/project';
 import Button from './Button';
 import TechBadge from './TechBadge';
+import { use3DTilt } from '../hooks/use3DTilt';
 import './ProjectCard.css';
 
 const GithubIcon = ({ size = 16, className = '' }: { size?: number; className?: string }) => (
@@ -35,6 +36,12 @@ export default function ProjectCard({
   className = '',
   style,
 }: ProjectCardProps) {
+  const cardRef = use3DTilt({
+    maxRotation: 10,
+    perspective: 1000,
+    scale: 1.03,
+  });
+
   const { title, category, role, teamSize, stack, status, demoUrl, githubUrl, images, rhPath } =
     project;
 
@@ -60,7 +67,11 @@ export default function ProjectCard({
     status.toLowerCase().includes('prod') || status.toLowerCase().includes('livr');
 
   return (
-    <article className={`project-card liquid-glass ${className}`.trim()} style={style}>
+    <article
+      ref={cardRef}
+      className={`project-card liquid-glass ${className}`.trim()}
+      style={style}
+    >
       {/* 1. Card Media (Thumbnail) */}
       <div
         className="project-card-media clickable"
