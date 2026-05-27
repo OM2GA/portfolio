@@ -861,3 +861,12 @@ section {
   width: 100%;
   margin-top: var(--space-xs);
 }
+
+/* ---------------------------------------------------- */
+/* Section: Terminal CLI Interactif                     */
+/* ---------------------------------------------------- */
+.section-terminal {
+  background-image: radial-gradient(circle at bottom left, var(--glow-color) 0%, transparent 50%);
+  position: relative;
+  overflow: hidden;
+}

@@ -252,11 +252,11 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
   - **Critères d'acceptation** :
     - [x] Schéma explicatif animé interactif au clic ou au survol montrant la circulation des flux de données (ex: Capteur -> Arduino -> WebSockets -> Dashboard).
 
-- [ ] **[INT-06] Mini Terminal de commande interactif (Easter Egg pour recruteurs)**
+- [x] **[INT-06] Mini Terminal de commande interactif (Easter Egg pour recruteurs)**
   - **Description** : Intégrer un mini-terminal rétro interactif (type CLI) où les recruteurs techniques peuvent s'amuser à taper des commandes de base.
   - **Critères d'acceptation** :
-    - [ ] Terminal fonctionnel réagissant à des commandes simples (`help`, `about`, `skills`, `projects`, `clear`).
-    - [ ] Effet d'écriture rétro et style Monospace parfait.
+    - [x] Terminal fonctionnel réagissant à des commandes simples (`help`, `about`, `skills`, `projects`, `clear`).
+    - [x] Effet d'écriture rétro et style Monospace parfait.
 
 - [ ] **[INT-07] Intégration de l'API de messagerie du formulaire**
   - **Description** : Connecter ton formulaire de contact à un service d'envoi d'e-mails pour recevoir directement les messages dans ta boîte de réception.

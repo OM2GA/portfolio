@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Home, User, Briefcase, Code, Mail, Sun, Moon, Menu, X, Cpu } from 'lucide-react';
+import { Home, User, Briefcase, Code, Mail, Sun, Moon, Menu, X, Cpu, Terminal as TerminalIcon } from 'lucide-react';
 import './Navbar.css';
 
 interface NavItem {
@@ -28,6 +28,11 @@ const navItems: NavItem[] = [
     id: 'iot',
     label: 'Lab IoT',
     icon: <Cpu size={18} />,
+  },
+  {
+    id: 'terminal',
+    label: 'Terminal',
+    icon: <TerminalIcon size={18} />,
   },
   {
     id: 'skills',

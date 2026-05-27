@@ -14,6 +14,7 @@ import ContactForm from './components/ContactForm';
 import { projects } from './data/projects';
 import type { Project } from './types/project';
 import IotFocus from './components/IotFocus';
+import Terminal from './components/Terminal';
 import { LazyMotion, domAnimation } from 'framer-motion';
 import ScrollReveal from './components/ScrollReveal';
 import './App.css';
@@ -290,6 +291,21 @@ function App() {
               </ScrollReveal>
               <ScrollReveal direction="up" delay={0.2}>
                 <IotFocus />
+              </ScrollReveal>
+            </div>
+          </section>
+
+          {/* SECTION TERMINAL (EASTER EGG) */}
+          <section id="terminal" className="section-terminal">
+            <div className="section-container">
+              <ScrollReveal direction="up">
+                <h2 className="section-title">Terminal CLI Interactif</h2>
+                <p className="section-subtitle">
+                  Pour les recruteurs techniques : explorez mon profil, mes compétences et mes projets en ligne de commande.
+                </p>
+              </ScrollReveal>
+              <ScrollReveal direction="up" delay={0.2}>
+                <Terminal />
               </ScrollReveal>
             </div>
           </section>

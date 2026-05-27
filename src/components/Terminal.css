@@ -27,6 +27,11 @@
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 35px rgba(99, 102, 241, 0.1);
 }
 
+.terminal-window.is-focused {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, transparent 60%);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 35px rgba(99, 102, 241, 0.15);
+}
+
 /* Window Header Bar (Style Mac/OS) */
 .terminal-header {
   height: 40px;
