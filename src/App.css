@@ -756,51 +756,6 @@ section {
   background-color: var(--bg-primary);
 }
 
-.skills-grid-placeholder {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-sm);
-}
-
-@media (min-width: 576px) {
-  .skills-grid-placeholder {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 992px) {
-  .skills-grid-placeholder {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-.skills-card-mock {
-  background-color: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  padding: var(--space-sm);
-  transition: border-color 0.2s ease;
-}
-
-.skills-card-mock:hover {
-  border-color: var(--accent-primary);
-}
-
-.skills-card-mock h3 {
-  font-size: 1.15rem;
-  color: var(--text-primary);
-  margin-bottom: var(--space-xs);
-  border-bottom: 1px solid var(--border-color);
-  padding-bottom: var(--space-xs);
-}
-
-.skill-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-
 /* ---------------------------------------------------- */
 /* Section 5: Contact Section Layout                    */
 /* ---------------------------------------------------- */

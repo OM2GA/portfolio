@@ -201,11 +201,11 @@ _Développement des blocs de contenus indispensables qui composent la page princ
   - **Critères d'acceptation** :
     - [x] Transition animée fluide lors du masquage/affichage des projets filtrés (sans saccade visuelle).
 
-- [ ] **[VIEW-07] Section Compétences (Skills)**
+- [x] **[VIEW-07] Section Compétences (Skills)**
   - **Description** : Organiser tes compétences techniques par sous-catégories (Langages Front, Outils Back/Base de données, Dispositifs Interactifs/IoT, Design/Maquettage).
   - **Critères d'acceptation** :
-    - [ ] Icônes officielles ou logos propres pour chaque technologie.
-    - [ ] Mise en page claire (grille de compétences interactives ou badges stylisés).
+    - [x] Icônes officielles ou logos propres pour chaque technologie.
+    - [x] Mise en page claire (grille de compétences interactives ou badges stylisés).
 
 - [ ] **[VIEW-08] Section Contact : Formulaire interactif**
   - **Description** : Créer un formulaire de contact professionnel permettant aux recruteurs de t'envoyer un message directement depuis le site.
