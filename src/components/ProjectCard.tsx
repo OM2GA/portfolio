@@ -1,4 +1,4 @@
-import { ExternalLink, Code, Users } from 'lucide-react';
+import { ExternalLink, Code, Users, Info } from 'lucide-react';
 import type { Project } from '../types/project';
 import Button from './Button';
 import TechBadge from './TechBadge';
@@ -24,11 +24,17 @@ const GithubIcon = ({ size = 16, className = '' }: { size?: number; className?: 
 
 export interface ProjectCardProps {
   project: Project;
+  onOpenDetails: (project: Project) => void;
   className?: string;
   style?: React.CSSProperties;
 }
 
-export default function ProjectCard({ project, className = '', style }: ProjectCardProps) {
+export default function ProjectCard({
+  project,
+  onOpenDetails,
+  className = '',
+  style,
+}: ProjectCardProps) {
   const { title, category, role, teamSize, stack, status, demoUrl, githubUrl, images, rhPath } =
     project;
 
@@ -56,7 +62,14 @@ export default function ProjectCard({ project, className = '', style }: ProjectC
   return (
     <article className={`project-card liquid-glass ${className}`.trim()} style={style}>
       {/* 1. Card Media (Thumbnail) */}
-      <div className="project-card-media">
+      <div
+        className="project-card-media clickable"
+        onClick={() => onOpenDetails(project)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && onOpenDetails(project)}
+        aria-label={`Voir les détails du projet ${title}`}
+      >
         <img
           src={images.thumbnail}
           alt={`Aperçu du projet ${title}`}
@@ -77,7 +90,9 @@ export default function ProjectCard({ project, className = '', style }: ProjectC
       {/* 2. Card Content */}
       <div className="project-card-content">
         {/* Title */}
-        <h3 className="project-card-title">{title}</h3>
+        <h3 className="project-card-title clickable" onClick={() => onOpenDetails(project)}>
+          {title}
+        </h3>
 
         {/* Role & Team details */}
         <div className="project-card-meta">
@@ -111,6 +126,15 @@ export default function ProjectCard({ project, className = '', style }: ProjectC
 
       {/* 3. Card Footer Actions */}
       <div className="project-card-actions">
+        <Button
+          onClick={() => onOpenDetails(project)}
+          variant="secondary"
+          size="sm"
+          leftIcon={<Info size={16} />}
+          className="project-action-btn project-details-btn"
+        >
+          Détails
+        </Button>
         {githubUrl && (
           <Button
             href={githubUrl}

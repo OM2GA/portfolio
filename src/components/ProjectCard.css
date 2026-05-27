@@ -270,3 +270,58 @@
   border-color: rgba(79, 70, 229, 0.25);
   background-color: rgba(79, 70, 229, 0.02);
 }
+
+/* Clickable triggers styling */
+.project-card-media.clickable {
+  cursor: pointer;
+}
+
+.project-card-media.clickable:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: -2px;
+}
+
+.project-card-title.clickable {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+.project-card-title.clickable::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.project-card:hover .project-card-title.clickable::after {
+  transform: scaleX(1);
+}
+
+/* Adjust details button background for contrast */
+.project-details-btn {
+  background: rgba(99, 102, 241, 0.06) !important;
+  border-color: rgba(99, 102, 241, 0.2) !important;
+}
+
+.project-details-btn:hover {
+  background: var(--accent-primary) !important;
+  border-color: var(--accent-primary) !important;
+  color: #ffffff !important;
+}
+
+:root[data-theme='light'] .project-details-btn {
+  background: rgba(79, 70, 229, 0.04) !important;
+  border-color: rgba(79, 70, 229, 0.15) !important;
+}
+
+:root[data-theme='light'] .project-details-btn:hover {
+  background: var(--accent-primary) !important;
+  border-color: var(--accent-primary) !important;
+}

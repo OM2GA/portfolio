@@ -213,11 +213,11 @@ _Développement des blocs de contenus indispensables qui composent la page princ
     - [x] Champs obligatoires validés en temps réel (Nom, Email, Message) avec des messages d'erreur explicites.
     - [x] Style des champs cohérent avec le design global du site.
 
-- [ ] **[VIEW-09] Page de Détail Projet (Template dynamique ou modale)**
+- [x] **[VIEW-09] Page de Détail Projet (Template dynamique ou modale)**
   - **Description** : Créer une page ou un panneau coulissant pour détailler un projet spécifique (très valorisant pour expliquer ton rôle dans les SAÉ de BUT MMI).
   - **Critères d'acceptation** :
-    - [ ] Présentation du problème de départ et de la solution technique.
-    - [ ] Galerie d'images / captures d'écran intégrée de façon ergonomique.
+    - [x] Présentation du problème de départ et de la solution technique.
+    - [x] Galerie d'images / captures d'écran intégrée de façon ergonomique.
 
 ---
 
@@ -225,10 +225,10 @@ _Développement des blocs de contenus indispensables qui composent la page princ
 
 _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront ton profil._
 
-- [ ] **[INT-01] Intégration d'une bibliothèque d'animations fluides (GSAP ou Framer Motion)**
+- [x] **[INT-01] Intégration d'une bibliothèque d'animations fluides (GSAP ou Framer Motion)**
   - **Description** : Installer et configurer une bibliothèque d'animation robuste pour enrichir l'expérience utilisateur globale.
   - **Critères d'acceptation** :
-    - [ ] Librairie initialisée sans impact négatif sur les performances de chargement initial.
+    - [x] Librairie initialisée sans impact négatif sur les performances de chargement initial.
 
 - [ ] **[INT-02] Animations de défilement (Scroll-Triggered Transitions)**
   - **Description** : Faire apparaître en fondu et décalage subtil les différentes sections et composants au fil de la navigation de l'utilisateur.
