@@ -295,11 +295,11 @@ _Amélioration de la qualité technique du code pour garantir performance et acc
     - [x] Balises `<title>` et `<meta name="description">` personnalisées et percutantes.
     - [x] Intégration des balises Open Graph (`og:title`, `og:description`, `og:image`) pour un affichage parfait lors des partages sur LinkedIn et Twitter.
 
-- [ ] **[SEO-02] Sitemap XML et Robots.txt**
+- [x] **[SEO-02] Sitemap XML et Robots.txt**
   - **Description** : Fournir les fichiers nécessaires pour guider les robots de recherche (Google, Bing) lors de l'indexation de ton site.
   - **Critères d'acceptation** :
-    - [ ] Fichier `sitemap.xml` valide listant les pages du site.
-    - [ ] Fichier `robots.txt` standard autorisant l'indexation globale.
+    - [x] Fichier `sitemap.xml` valide listant les pages du site.
+    - [x] Fichier `robots.txt` standard autorisant l'indexation globale.
 
 - [ ] **[A11Y-01] Contraste de couleurs et sémantique HTML5**
   - **Description** : Garantir l'accès à ton portfolio pour les personnes en situation de handicap (conformément au RGAA/WCAG).
