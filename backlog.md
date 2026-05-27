@@ -241,11 +241,11 @@ _Ajout de l'effet "Wow" et de fonctionnalités interactives qui démarqueront to
     - [x] La carte s'incline légèrement en suivant les mouvements du curseur.
     - [x] Désactivation automatique de l'effet sur les écrans tactiles pour éviter les conflits d'interaction.
 
-- [ ] **[INT-04] Curseur personnalisé interactif (Custom Cursor)**
+- [x] **[INT-04] Curseur personnalisé interactif (Custom Cursor)**
   - **Description** : Créer un curseur personnalisé réagissant au survol des éléments interactifs pour montrer ta maîtrise du développement créatif.
   - **Critères d'acceptation** :
-    - [ ] Curseur fluide (sans latence perçue) qui change de style (grossissement, flou, ou inversion de couleur) au survol des liens et boutons.
-    - [ ] Repli automatique (fallback) vers le curseur système par défaut sur tablette et mobile.
+    - [x] Curseur fluide (sans latence perçue) qui change de style (grossissement, flou, ou inversion de couleur) au survol des liens et boutons.
+    - [x] Repli automatique (fallback) vers le curseur système par défaut sur tablette et mobile.
 
 - [ ] **[INT-05] Focus spécial "Dispositifs Interactifs / IoT"**
   - **Description** : Créer un composant graphique interactif (ex: un schéma interactif animé ou un simulateur en SVG/CSS) expliquant visuellement comment tu as connecté un capteur physique à une API web dans l'un de tes projets.

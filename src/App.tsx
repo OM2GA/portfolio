@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import Navbar from './components/Navbar';
+import CustomCursor from './components/CustomCursor';
 import Footer from './components/Footer';
 import Button from './components/Button';
 import ProjectCard from './components/ProjectCard';
@@ -45,6 +46,7 @@ function App() {
   return (
     <LazyMotion features={domAnimation} strict>
       <div className="portfolio-app">
+        <CustomCursor />
         <Navbar />
 
         <main className="main-content">

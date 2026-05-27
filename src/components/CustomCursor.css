@@ -1,0 +1,124 @@
+/* ==========================================================================
+   Custom Cursor Styling - MMI Portfolio (Maxence Coste)
+   ========================================================================== */
+
+/* Cache le curseur natif uniquement sur les écrans avec un pointeur précis (souris/trackpad) */
+@media (pointer: fine) {
+  body,
+  body a,
+  body button,
+  body [role='button'],
+  body input,
+  body select,
+  body textarea,
+  body .filter-btn,
+  body .custom-btn {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99999;
+}
+
+/* Le point central réactif immédiatement */
+.custom-cursor {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-secondary, #10b981); /* Vert menthe */
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99999;
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition:
+    width 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease-in-out;
+  opacity: 0; /* Invisibles par défaut, s'affichent au premier mouvement */
+}
+
+/* Le cercle suiveur fluide avec inertie */
+.custom-cursor-follower {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--accent-primary, #6366f1); /* Indigo */
+  background-color: rgba(99, 102, 241, 0.03);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 99998;
+  transform: translate(-50%, -50%);
+  will-change: left, top, width, height, border-color, background-color, box-shadow;
+  transition:
+    width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease-in-out;
+  opacity: 0;
+}
+
+/* --- Classe Active / Visibilité --- */
+.custom-cursor-container.is-visible .custom-cursor,
+.custom-cursor-container.is-visible .custom-cursor-follower {
+  opacity: 1;
+}
+
+/* --- États de Survol (Hovering sur éléments cliquables) --- */
+.custom-cursor.hovering {
+  width: 4px;
+  height: 4px;
+  background-color: var(--accent-primary, #6366f1);
+}
+
+.custom-cursor-follower.hovering {
+  width: 48px;
+  height: 48px;
+  border-color: var(--accent-secondary, #10b981);
+  background-color: rgba(16, 185, 129, 0.05);
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+/* --- Replis (Fallbacks) - Accessibilité & Écrans Tactiles --- */
+
+/* Désactivation sur les tablettes, mobiles et écrans tactiles */
+@media (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+  body,
+  body a,
+  body button,
+  body [role='button'],
+  body input,
+  body select,
+  body textarea {
+    cursor: auto !important;
+  }
+}
+
+/* Désactivation si l'utilisateur a paramétré les mouvements réduits */
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+  body,
+  body a,
+  body button,
+  body [role='button'],
+  body input,
+  body select,
+  body textarea {
+    cursor: auto !important;
+  }
+}
