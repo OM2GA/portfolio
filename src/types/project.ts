@@ -43,4 +43,5 @@ export interface Project {
   rhPath: RHPath;
   techPath: TechPath;
   codeSnippet?: CodeSnippet;
+  techCategory?: string;
 }

@@ -450,7 +450,7 @@
   }
 
   .timeline-accordion-item.is-open .accordion-step-pulse {
-    animation: activePulse 2.s infinite;
+    animation: activePulse 2s infinite;
   }
 
   /* Colonne Contenu */
@@ -551,12 +551,16 @@
 .accordion-trigger-btn:focus-visible {
   outline: none;
   border-radius: var(--radius-md);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.4), 0 0 15px rgba(99, 102, 241, 0.3);
+  box-shadow:
+    0 0 0 3px rgba(99, 102, 241, 0.4),
+    0 0 15px rgba(99, 102, 241, 0.3);
 }
 
 .timeline-step-btn.is-special:focus-visible,
 .timeline-accordion-item.is-special .accordion-trigger-btn:focus-visible {
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.4), 0 0 15px rgba(16, 185, 129, 0.3);
+  box-shadow:
+    0 0 0 3px rgba(16, 185, 129, 0.4),
+    0 0 15px rgba(16, 185, 129, 0.3);
 }
 
 /* ---------------------------------------------------- */

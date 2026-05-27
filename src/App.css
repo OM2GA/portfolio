@@ -555,6 +555,120 @@ section {
   background-image: radial-gradient(circle at bottom left, var(--glow-color) 0%, transparent 50%);
 }
 
+/* ---------------------------------------------------- */
+/* Projects Filter Bar Styling                          */
+/* ---------------------------------------------------- */
+.projects-filter-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  width: 100%;
+}
+
+.projects-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px;
+  border-radius: 9999px; /* Perfect pill shape */
+  background: var(--surface-translucent);
+  border: 1px solid var(--border-color);
+  max-width: 100%;
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  user-select: none;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme='light'] .filter-btn:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.filter-btn.is-active {
+  color: #ffffff !important;
+  background: var(--accent-primary);
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+}
+
+:root[data-theme='light'] .filter-btn.is-active {
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.25);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: -2px;
+}
+
+/* ---------------------------------------------------- */
+/* Staggered Entrance & Exit Animations                 */
+/* ---------------------------------------------------- */
+.project-card {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: calc(var(--index) * 0.06s);
+}
+
+.projects-grid.is-transitioning .project-card {
+  animation: fadeOutDown 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0s !important; /* All disappear together */
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(18px) scale(0.97);
+  }
+}
+
+/* Mobile Responsiveness for Filters */
+@media (max-width: 640px) {
+  .projects-filters {
+    border-radius: var(--radius-md);
+    width: 100%;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .filter-btn {
+    width: calc(50% - 4px);
+    text-align: center;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.82rem;
+    border-radius: var(--radius-sm);
+  }
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;

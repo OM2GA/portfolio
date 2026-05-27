@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { ArrowRight, Download } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -11,6 +12,30 @@ import { projects } from './data/projects';
 import './App.css';
 
 function App() {
+  const [activeFilter, setActiveFilter] = useState('Tous');
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [visibleProjects, setVisibleProjects] = useState(projects);
+
+  const filters = ['Tous', 'Front-End', 'Back-End', 'Dispositifs Interactifs'];
+
+  const handleFilterChange = (filter: string) => {
+    if (filter === activeFilter || isTransitioning) return;
+
+    // Phase 1: trigger exit animation
+    setIsTransitioning(true);
+
+    // Phase 2: wait for exit transition (250ms), update list, end transition
+    setTimeout(() => {
+      setActiveFilter(filter);
+      if (filter === 'Tous') {
+        setVisibleProjects(projects);
+      } else {
+        setVisibleProjects(projects.filter((p) => p.techCategory === filter));
+      }
+      setIsTransitioning(false);
+    }, 250);
+  };
+
   return (
     <div className="portfolio-app">
       <Navbar />
@@ -199,9 +224,41 @@ function App() {
             <p className="section-subtitle">
               Découvrez une sélection de mes réalisations académiques (SAÉ) et personnelles.
             </p>
-            <div className="projects-grid">
-              {projects.map((project) => (
-                <ProjectCard key={project.id} project={project} />
+
+            {/* Filtres de Projets */}
+            <div className="projects-filter-container">
+              <div
+                className="projects-filters liquid-glass"
+                role="tablist"
+                aria-label="Filtrer les projets par catégorie"
+              >
+                {filters.map((filter) => {
+                  const isActive = filter === activeFilter;
+                  return (
+                    <button
+                      key={filter}
+                      role="tab"
+                      aria-selected={isActive}
+                      className={`filter-btn ${isActive ? 'is-active' : ''}`}
+                      onClick={() => handleFilterChange(filter)}
+                    >
+                      {filter}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div
+              className={`projects-grid ${isTransitioning ? 'is-transitioning' : ''}`}
+              key={activeFilter}
+            >
+              {visibleProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  style={{ '--index': index } as React.CSSProperties}
+                />
               ))}
             </div>
           </div>

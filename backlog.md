@@ -190,16 +190,16 @@ _Développement des blocs de contenus indispensables qui composent la page princ
   - **Critères d'acceptation** :
     - [x] Composant interactif permettant de cliquer sur les étapes pour afficher des détails textuels ou visuels supplémentaires.
 
-- [ ] **[VIEW-05] Section Projets : Liste & Grille interactive**
+- [x] **[VIEW-05] Section Projets : Liste & Grille interactive**
   - **Description** : Afficher la grille de cartes de projets en important les données structurées de ton fichier JSON/Markdown.
   - **Critères d'acceptation** :
-    - [ ] Alignement responsive (CSS Grid ou Flexbox) s'adaptant parfaitement aux écrans.
-    - [ ] Rendu performant des images.
+    - [x] Alignement responsive (CSS Grid ou Flexbox) s'adaptant parfaitement aux écrans.
+    - [x] Rendu performant des images.
 
-- [ ] **[VIEW-06] Section Projets : Filtrage dynamique par catégorie**
+- [x] **[VIEW-06] Section Projets : Filtrage dynamique par catégorie**
   - **Description** : Ajouter des boutons de filtrage pour trier rapidement les projets (ex: "Tous", "Front-End", "Back-End", "Dispositifs Interactifs").
   - **Critères d'acceptation** :
-    - [ ] Transition animée fluide lors du masquage/affichage des projets filtrés (sans saccade visuelle).
+    - [x] Transition animée fluide lors du masquage/affichage des projets filtrés (sans saccade visuelle).
 
 - [ ] **[VIEW-07] Section Compétences (Skills)**
   - **Description** : Organiser tes compétences techniques par sous-catégories (Langages Front, Outils Back/Base de données, Dispositifs Interactifs/IoT, Design/Maquettage).

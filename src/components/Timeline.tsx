@@ -21,34 +21,39 @@ const TIMELINE_DATA: TimelineMilestone[] = [
     date: 'Sept. 2026',
     title: 'Alternance BUT3',
     subtitle: 'Développeur Web & IoT',
-    location: 'Entreprise d\'Accueil (Recherchée)',
-    summary: 'Recherche d\'un contrat d\'un an pour concevoir des solutions web innovantes et/ou des dispositifs connectés.',
-    description: 'Prêt à intégrer votre équipe technique pour développer des applications performantes et créatives. Fortement intéressé par le développement Front-End (React, Vite, TypeScript), la programmation Back-End (Node.js, Express, Laravel), la mise en œuvre de protocoles de communication temps réel (WebSockets, MQTT) et le prototypage IoT. Soucieux de l\'accessibilité (RGAA/WCAG), du SEO et de la propreté du code.',
+    location: "Entreprise d'Accueil (Recherchée)",
+    summary:
+      "Recherche d'un contrat d'un an pour concevoir des solutions web innovantes et/ou des dispositifs connectés.",
+    description:
+      "Prêt à intégrer votre équipe technique pour développer des applications performantes et créatives. Fortement intéressé par le développement Front-End (React, Vite, TypeScript), la programmation Back-End (Node.js, Express, Laravel), la mise en œuvre de protocoles de communication temps réel (WebSockets, MQTT) et le prototypage IoT. Soucieux de l'accessibilité (RGAA/WCAG), du SEO et de la propreté du code.",
     iconType: 'alternance',
-    tags: ['Fullstack', 'React', 'Node.js', 'WebSockets', 'IoT', 'Autonomie']
+    tags: ['Fullstack', 'React', 'Node.js', 'WebSockets', 'IoT', 'Autonomie'],
   },
   {
     id: 'mmi',
     date: '2024 - Présent',
     title: 'BUT MMI',
-    subtitle: 'Métiers du Multimédia et de l\'Internet',
+    subtitle: "Métiers du Multimédia et de l'Internet",
     location: 'IUT Lyon 1 - Université Claude Bernard',
-    summary: 'Spécialisation Développement Web et Dispositifs Interactifs. Apprentissage de la synergie design-technique.',
-    description: 'Formation pluridisciplinaire poussée. Conception et développement de projets web complets (SAÉ) : intégration responsive en React/TypeScript, développement d\'API RESTful, bases de données relationnelles et non relationnelles. Volet IoT conséquent : programmation de microcontrôleurs (Arduino, ESP32) en C++, interfaçage avec des capteurs physiques et liaison bidirectionnelle temps réel avec des dashboards web.',
+    summary:
+      'Spécialisation Développement Web et Dispositifs Interactifs. Apprentissage de la synergie design-technique.',
+    description:
+      "Formation pluridisciplinaire poussée. Conception et développement de projets web complets (SAÉ) : intégration responsive en React/TypeScript, développement d'API RESTful, bases de données relationnelles et non relationnelles. Volet IoT conséquent : programmation de microcontrôleurs (Arduino, ESP32) en C++, interfaçage avec des capteurs physiques et liaison bidirectionnelle temps réel avec des dashboards web.",
     iconType: 'mmi',
-    tags: ['TypeScript', 'React', 'Node.js', 'Laravel', 'Arduino/C++', 'WebSockets', 'Git']
+    tags: ['TypeScript', 'React', 'Node.js', 'Laravel', 'Arduino/C++', 'WebSockets', 'Git'],
   },
   {
     id: 'sti2d',
     date: '2022 - 2024',
     title: 'Bac STI2D',
-    subtitle: 'Sciences et Technologies de l\'Industrie',
+    subtitle: "Sciences et Technologies de l'Industrie",
     location: 'Lycée Technique - Spécialité SIN',
-    summary: 'Obtention du baccalauréat STI2D (Système d\'Information et Numérique) avec mention.',
-    description: 'Découverte approfondie des bases algorithmiques, de l\'électronique numérique, de l\'embarqué et des architectures réseaux. Modélisation et programmation orientée objet de petits objets communicants (Python, C++). C\'est ici qu\'est née ma passion pour l\'assemblage de pièces physiques contrôlées par du code et reliées à des interfaces utilisateur.',
+    summary: "Obtention du baccalauréat STI2D (Système d'Information et Numérique) avec mention.",
+    description:
+      "Découverte approfondie des bases algorithmiques, de l'électronique numérique, de l'embarqué et des architectures réseaux. Modélisation et programmation orientée objet de petits objets communicants (Python, C++). C'est ici qu'est née ma passion pour l'assemblage de pièces physiques contrôlées par du code et reliées à des interfaces utilisateur.",
     iconType: 'sti2d',
-    tags: ['Algorithmique', 'C++', 'Python', 'Réseaux', 'Électronique']
-  }
+    tags: ['Algorithmique', 'C++', 'Python', 'Réseaux', 'Électronique'],
+  },
 ];
 
 export default function Timeline() {
@@ -77,10 +82,14 @@ export default function Timeline() {
   return (
     <div className="portfolio-timeline">
       {/* DESKTOP TIMELINE (Horizontal Bento Mode) */}
-      <div className="timeline-desktop" role="tablist" aria-label="Mon parcours professionnel et académique">
+      <div
+        className="timeline-desktop"
+        role="tablist"
+        aria-label="Mon parcours professionnel et académique"
+      >
         <div className="timeline-track-container">
           <div className="timeline-track-line" />
-          
+
           <div className="timeline-steps">
             {TIMELINE_DATA.map((milestone) => {
               const isActive = milestone.id === activeId;
@@ -102,7 +111,7 @@ export default function Timeline() {
                       {renderIcon(milestone.iconType)}
                     </div>
                   </div>
-                  
+
                   <div className="timeline-step-info">
                     <span className="timeline-step-date">{milestone.date}</span>
                     <h4 className="timeline-step-title">{milestone.title}</h4>
@@ -115,8 +124,8 @@ export default function Timeline() {
         </div>
 
         {/* Panel de détails Desktop avec animation */}
-        <div 
-          className="timeline-detail-panel liquid-glass" 
+        <div
+          className="timeline-detail-panel liquid-glass"
           id={`panel-${activeMilestone.id}`}
           role="tabpanel"
           aria-labelledby={`tab-${activeMilestone.id}`}
@@ -134,13 +143,14 @@ export default function Timeline() {
               </span>
             </div>
             <h3 className="panel-title">
-              {activeMilestone.title} <span className="panel-title-separator">—</span> <span className="panel-subtitle">{activeMilestone.subtitle}</span>
+              {activeMilestone.title} <span className="panel-title-separator">—</span>{' '}
+              <span className="panel-subtitle">{activeMilestone.subtitle}</span>
             </h3>
           </div>
-          
+
           <div className="panel-body">
             <p className="panel-description">{activeMilestone.description}</p>
-            
+
             <div className="panel-skills">
               <span className="skills-label">Compétences clés acquises :</span>
               <div className="skills-badge-list">
@@ -156,13 +166,13 @@ export default function Timeline() {
       {/* MOBILE TIMELINE (Vertical Accordion Mode) */}
       <div className="timeline-mobile">
         <div className="timeline-vertical-track" />
-        
+
         <div className="timeline-accordion-list">
           {TIMELINE_DATA.map((milestone) => {
             const isOpen = milestone.id === activeId;
             return (
-              <div 
-                key={milestone.id} 
+              <div
+                key={milestone.id}
                 className={`timeline-accordion-item ${isOpen ? 'is-open' : ''} ${milestone.id === 'alternance' ? 'is-special' : ''}`}
               >
                 <button
@@ -174,30 +184,28 @@ export default function Timeline() {
                   <div className="accordion-marker-col">
                     <div className="accordion-step-marker">
                       <span className="accordion-step-pulse" />
-                      <div className="accordion-icon-wrapper">
-                        {renderIcon(milestone.iconType)}
-                      </div>
+                      <div className="accordion-icon-wrapper">{renderIcon(milestone.iconType)}</div>
                     </div>
                   </div>
-                  
+
                   <div className="accordion-title-col">
                     <span className="accordion-date">{milestone.date}</span>
                     <h4 className="accordion-title-text">{milestone.title}</h4>
                     <p className="accordion-subtitle-text">{milestone.subtitle}</p>
                   </div>
-                  
+
                   <div className="accordion-arrow-col">
                     <ChevronDown className="accordion-arrow-icon" size={18} />
                   </div>
                 </button>
-                
-                <div 
+
+                <div
                   id={`accordion-panel-${milestone.id}`}
                   className="accordion-content-wrapper"
                   style={{
                     maxHeight: isOpen ? '500px' : '0px',
                     opacity: isOpen ? 1 : 0,
-                    visibility: isOpen ? 'visible' : 'hidden'
+                    visibility: isOpen ? 'visible' : 'hidden',
                   }}
                 >
                   <div className="accordion-content-inner">
@@ -206,7 +214,7 @@ export default function Timeline() {
                       {milestone.location}
                     </div>
                     <p className="accordion-description">{milestone.description}</p>
-                    
+
                     <div className="accordion-skills">
                       <div className="skills-badge-list">
                         {milestone.tags.map((tag) => (

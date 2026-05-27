@@ -25,9 +25,10 @@ const GithubIcon = ({ size = 16, className = '' }: { size?: number; className?: 
 export interface ProjectCardProps {
   project: Project;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export default function ProjectCard({ project, className = '' }: ProjectCardProps) {
+export default function ProjectCard({ project, className = '', style }: ProjectCardProps) {
   const { title, category, role, teamSize, stack, status, demoUrl, githubUrl, images, rhPath } =
     project;
 
@@ -53,7 +54,7 @@ export default function ProjectCard({ project, className = '' }: ProjectCardProp
     status.toLowerCase().includes('prod') || status.toLowerCase().includes('livr');
 
   return (
-    <article className={`project-card liquid-glass ${className}`.trim()}>
+    <article className={`project-card liquid-glass ${className}`.trim()} style={style}>
       {/* 1. Card Media (Thumbnail) */}
       <div className="project-card-media">
         <img
